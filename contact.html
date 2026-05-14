@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us — Pressure & Soft Wash</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+     <link rel="icon" type="img/jpg" href="img/growwpark-logo.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <script src="tailwind.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        cormorant: ['"Cormorant Garamond"', 'serif'],
+                        jost: ['Jost', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#ec4899',
+                        primaryDark: '#be185d',
+                        studioBg: '#fef8f4',
+                        sage: '#edf1ed',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-jost  dark:bg-black text-[#1f1015] dark:text-gray-100 transition-colors duration-300">
+
+    <!-- NAVBAR CONTAINER -->
+    <div id="navbar-root"></div>
+
+    <main class="overflow-x-hidden">
+    <!-- Section 1 & 2 — Contact Hero & Info Cards -->
+ <!-- Section 1 — Contact Hero (Full Height with Background Image) -->
+<section class="relative min-h-screen w-full overflow-hidden flex items-center justify-center bg-gray-900 transition-colors duration-300">
+    
+    <!-- Background Image Area -->
+    <div class="absolute inset-0 z-0">
+        <!-- Background Image -->
+        <img src="img/home1.webp" 
+             class="w-full h-full object-cover opacity-50 dark:opacity-40" alt="Contact Background">
+        
+        <!-- Gradient Overlays: Top-la dark-avum bottom-la section blend aaguira mathiriyum -->
+        <div class="absolute inset-0 bg-gradient-to-b from-blue-900/40 via-white/70 to-slate-50 dark:via-black/70 dark:to-black transition-colors"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto relative z-10 px-6 py-20">
+        <!-- Hero Heading -->
+        <div class="text-center mb-16 md:mb-24">
+            
+            <h1 class="font-cormorant text-5xl md:text-7xl lg:text-7xl text-gray-900 dark:text-white font-bold mb-8 leading-tight transition-colors">
+                Get In Touch <br> <span class="italic text-blue-600 dark:text-blue-400">With Us</span>
+            </h1>
+            
+        </div>
+
+        <!-- Info Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            <!-- Phone -->
+            <div class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg p-10 md:p-12 rounded-[3rem] text-center shadow-2xl border border-white/20 group hover:-translate-y-2 transition-all">
+                <div class="w-16 h-16 bg-blue-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-blue-500/30 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-phone-alt text-2xl"></i>
+                </div>
+                <h4 class="font-bold text-gray-900 dark:text-white mb-2 uppercase tracking-widest text-xs">Phone</h4>
+                <p class="text-gray-600 dark:text-gray-300 font-bold">+91 98765 43210</p>
+            </div>
+
+            <!-- Email -->
+            <div class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg p-10 md:p-12 rounded-[3rem] text-center shadow-2xl border border-white/20 group hover:-translate-y-2 transition-all">
+                <div class="w-16 h-16 bg-blue-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-blue-500/30 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-envelope text-2xl"></i>
+                </div>
+                <h4 class="font-bold text-gray-900 dark:text-white mb-2 uppercase tracking-widest text-xs">Email</h4>
+                <p class="text-gray-600 dark:text-gray-300 font-bold">info@growwpark.com</p>
+            </div>
+
+            <!-- Address -->
+            <div class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg p-10 md:p-12 rounded-[3rem] text-center shadow-2xl border border-white/20 group hover:-translate-y-2 transition-all">
+                <div class="w-16 h-16 bg-blue-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-blue-500/30 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-map-marker-alt text-2xl"></i>
+                </div>
+                <h4 class="font-bold text-gray-900 dark:text-white mb-2 uppercase tracking-widest text-xs">Address</h4>
+                <p class="text-gray-600 dark:text-gray-300 font-bold">Tamil Nadu, India</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Section 3, 4 & 5 — Contact Form, Map & Working Hours -->
+<section class="py-24 px-6 bg-white dark:bg-gray-900">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
+        
+        <!-- Contact Form -->
+        <div class="bg-slate-50 dark:bg-gray-800 p-10 md:p-16 rounded-[4rem] shadow-sm">
+            <h2 class="text-3xl font-bold mb-8 text-gray-900 dark:text-white">Send Us a Message</h2>
+            <form class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <input type="text" placeholder="Full Name" class="w-full px-8 py-5 rounded-3xl bg-white dark:bg-gray-700 border-none focus:ring-2 focus:ring-blue-600 dark:text-white shadow-sm">
+                    <input type="tel" placeholder="Phone Number" class="w-full px-8 py-5 rounded-3xl bg-white dark:bg-gray-700 border-none focus:ring-2 focus:ring-blue-600 dark:text-white shadow-sm">
+                </div>
+                <select class="w-full px-8 py-5 rounded-3xl bg-white dark:bg-gray-700 border-none focus:ring-2 focus:ring-blue-600 dark:text-white shadow-sm">
+                    <option>Select Service</option>
+                    <option>Residential Wash</option>
+                    <option>Commercial Wash</option>
+                    <option>Roof Cleaning</option>
+                </select>
+                <textarea placeholder="Your Message" rows="5" class="w-full px-8 py-5 rounded-3xl bg-white dark:bg-gray-700 border-none focus:ring-2 focus:ring-blue-600 dark:text-white shadow-sm"></textarea>
+                <button class="w-full py-5 bg-blue-600 text-white rounded-full font-bold uppercase tracking-widest hover:bg-blue-700 transition-all shadow-xl shadow-blue-500/20">Send Message</button>
+            </form>
+        </div>
+
+        <!-- Right Side: Map & Hours -->
+        <div class="flex flex-col gap-12">
+            <!-- Google Map -->
+            <div class="rounded-[3rem] overflow-hidden h-[350px] shadow-2xl relative group">
+                <!-- Placeholder for Google Map Embed -->
+                <iframe src="https://www.google.com/maps/embed?..." class="w-full h-full border-none grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700"></iframe>
+            </div>
+
+            <!-- Working Hours -->
+            <div class="bg-blue-600 text-white p-12 rounded-[3.5rem] shadow-xl relative overflow-hidden">
+                <!-- Background Pattern -->
+                <i class="fas fa-clock absolute -right-10 -bottom-10 text-9xl opacity-10"></i>
+                
+                <h3 class="text-2xl font-bold mb-8 flex items-center gap-3">
+                    <i class="fas fa-calendar-alt"></i> Working Hours
+                </h3>
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center border-b border-white/20 pb-4">
+                        <span class="font-medium">Monday – Saturday</span>
+                        <span class="bg-white text-blue-600 px-4 py-1 rounded-full font-bold text-sm">8AM – 7PM</span>
+                    </div>
+                    <div class="flex justify-between items-center opacity-60">
+                        <span class="font-medium">Sunday</span>
+                        <span class="font-bold text-sm uppercase tracking-widest">Closed</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Section 6 — Social & Final CTA -->
+<section class="py-24 px-6 bg-slate-50 dark:bg-black transition-colors duration-300">
+    <div class="max-w-7xl mx-auto text-center">
+        
+        <!-- Social Media Heading -->
+        <div class="mb-12">
+            <span class="text-blue-600 dark:text-blue-400 font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Let's Connect</span>
+            <h2 class="font-cormorant text-4xl md:text-5xl text-gray-900 dark:text-white font-bold transition-colors">Follow Our Work</h2>
+            <div class="w-16 h-1 bg-blue-600 mx-auto mt-6 rounded-full"></div>
+        </div>
+
+        <!-- Social Icons Grid -->
+        <div class="flex flex-wrap justify-center gap-6 md:gap-10 mb-20">
+            <!-- WhatsApp -->
+            <a href="https://wa.me/911234567890" class="group flex flex-col items-center gap-4">
+                <div class="w-16 h-16 md:w-20 md:h-20 bg-white dark:bg-gray-800 rounded-[2rem] flex items-center justify-center text-green-500 shadow-xl shadow-green-500/5 group-hover:bg-green-500 group-hover:text-white transition-all duration-500">
+                    <i class="fab fa-whatsapp text-3xl"></i>
+                </div>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400">WhatsApp</span>
+            </a>
+
+            <!-- Facebook -->
+            <a href="#" class="group flex flex-col items-center gap-4">
+                <div class="w-16 h-16 md:w-20 md:h-20 bg-white dark:bg-gray-800 rounded-[2rem] flex items-center justify-center text-blue-700 shadow-xl shadow-blue-700/5 group-hover:bg-blue-700 group-hover:text-white transition-all duration-500">
+                    <i class="fab fa-facebook-f text-3xl"></i>
+                </div>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400">Facebook</span>
+            </a>
+
+            <!-- Instagram -->
+            <a href="#" class="group flex flex-col items-center gap-4">
+                <div class="w-16 h-16 md:w-20 md:h-20 bg-white dark:bg-gray-800 rounded-[2rem] flex items-center justify-center text-pink-600 shadow-xl shadow-pink-600/5 group-hover:bg-gradient-to-tr group-hover:from-yellow-400 group-hover:via-pink-500 group-hover:to-purple-600 group-hover:text-white transition-all duration-500">
+                    <i class="fab fa-instagram text-3xl"></i>
+                </div>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400">Instagram</span>
+            </a>
+        </div>
+
+        <!-- Final Booking CTA Card -->
+        <div class="relative max-w-4xl mx-auto rounded-[3.5rem] bg-blue-600 p-12 md:p-16 overflow-hidden shadow-2xl shadow-blue-500/20">
+            <!-- Background Decorative Icons -->
+            <i class="fas fa-hand-sparkles absolute -left-10 -bottom-10 text-[180px] text-white/10 rotate-12"></i>
+            
+            <div class="relative z-10">
+                <h3 class="text-3xl md:text-5xl text-white font-bold mb-6">Start Your Transformation</h3>
+                <p class="text-blue-100 mb-10 max-w-lg mx-auto opacity-90 leading-relaxed">
+                    Ready to give your property the expert care it needs? Book your cleaning session now and see the difference.
+                </p>
+                <a href="booking.html" class="inline-block px-14 py-5 bg-white text-blue-600 rounded-full font-black tracking-widest uppercase hover:bg-blue-50 hover:scale-105 transition-all shadow-xl shadow-black/10 text-sm">
+                    Book Now
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+   
+</main>
+
+<style>
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+</style>
+
+    <!-- FOOTER CONTAINER -->
+    <div id="footer-root"></div>
+
+    <script src="navbar.js"></script>
+    <script src="footer.js"></script>
+</body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>service — About — Pressure & Soft Wash</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+     <link rel="icon" type="img/jpg" href="img/growwpark-logo.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <script src="tailwind.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        cormorant: ['"Cormorant Garamond"', 'serif'],
+                        jost: ['Jost', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#ec4899',
+                        primaryDark: '#be185d',
+                        studioBg: '#fef8f4',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-jost  dark:bg-black text-[#1f1015] dark:text-gray-100 transition-colors duration-300">
+
+    <!-- NAVBAR CONTAINER -->
+    <div id="navbar-root"></div>
+
+    <main>
+        
+<!-- Section 1 — Services Hero -->
+<section class="relative py-32 md:py-48 px-6 overflow-hidden flex items-center justify-center">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0">
+        <!-- Cleaning service background image -->
+        <img src="img/services1.jpg" 
+             class="w-full h-full object-cover opacity-30" 
+             alt="Professional Cleaning Background">
+        
+        <!-- Overlay: Blue and White/Black gradient for clear text -->
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-blue-50/40 dark:via-black/40 to-blue-50 dark:to-black transition-colors duration-300"></div>
+    </div>
+
+    <!-- Content Area -->
+    <div class="relative z-10 max-w-7xl mx-auto text-center">
+        <span class="inline-block text-blue-600 dark:text-blue-400 font-bold tracking-[0.3em] uppercase text-xs mb-4">Quality You Can Trust</span>
+
+        <h1 class="font-cormorant text-6xl md:text-7xl text-gray-900 dark:text-white mb-8 leading-tight font-bold transition-colors">
+            Our Professional <br> 
+            <span class="italic text-blue-600 dark:text-blue-400 drop-shadow-sm transition-colors">Cleaning Services</span>
+        </h1>
+
+        <p class="max-w-2xl mx-auto text-gray-700 dark:text-gray-300 text-lg md:text-xl font-medium leading-relaxed transition-colors">
+            From residential soft-wash to heavy-duty commercial pressure washing, we provide the ultimate shine for your property.
+        </p>
+    </div>
+
+    <!-- Bottom Curve for Smooth Transition -->
+    <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none text-blue-50 dark:text-gray-900 transition-colors duration-300">
+        <svg class="relative block w-full h-12" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M1200 120L0 120 0 0C166.66 0 333.33 0 500 0s333.33 0 500 0 166.66 0 200 0v120z" fill="currentColor"></path>
+        </svg>
+    </div>
+</section>
+
+
+
+
+
+<!-- Section 2 — Residential Services -->
+<section class="py-24 px-6 bg-white dark:bg-gray-900 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-16">
+            <span class="text-blue-600 font-bold uppercase tracking-widest text-xs">For Your Home</span>
+            <h2 class="font-cormorant text-5xl text-gray-900 dark:text-white font-bold mt-2">Residential Cleaning</h2>
+            <div class="w-20 h-1.5 bg-blue-600 mt-4 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- House Washing -->
+            <div class="group bg-blue-50 dark:bg-gray-800 rounded-[3rem] p-8 border border-blue-100 dark:border-gray-700 hover:shadow-2xl transition-all duration-500">
+                <div class="w-16 h-16 bg-white dark:bg-gray-700 rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:bg-blue-600 transition-colors">
+                    <i class="fas fa-home text-blue-600 group-hover:text-white text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">House Washing</h3>
+                <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">Safe soft-wash technique to remove algae, mold, and dirt from your siding without any damage.</p>
+                <ul class="text-sm text-gray-500 dark:text-gray-400 space-y-2">
+                    <li><i class="fas fa-check text-blue-600 mr-2"></i> Vinyl & Brick Safe</li>
+                    <li><i class="fas fa-check text-blue-600 mr-2"></i> Eco-friendly Soaps</li>
+                </ul>
+            </div>
+
+            <!-- Roof Cleaning -->
+            <div class="group bg-blue-50 dark:bg-gray-800 rounded-[3rem] p-8 border border-blue-100 dark:border-gray-700 hover:shadow-2xl transition-all duration-500">
+                <div class="w-16 h-16 bg-white dark:bg-gray-700 rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:bg-blue-600 transition-colors">
+                    <i class="fas fa-house-damage text-blue-600 group-hover:text-white text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Roof Cleaning</h3>
+                <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">Specialized low-pressure treatment to kill black streaks and moss, extending your roof's life.</p>
+                <ul class="text-sm text-gray-500 dark:text-gray-400 space-y-2">
+                    <li><i class="fas fa-check text-blue-600 mr-2"></i> Shingle Protection</li>
+                    <li><i class="fas fa-check text-blue-600 mr-2"></i> Prevents Decay</li>
+                </ul>
+            </div>
+
+            <!-- Patio Cleaning -->
+            <div class="group bg-blue-50 dark:bg-gray-800 rounded-[3rem] p-8 border border-blue-100 dark:border-gray-700 hover:shadow-2xl transition-all duration-500">
+                <div class="w-16 h-16 bg-white dark:bg-gray-700 rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:bg-blue-600 transition-colors">
+                    <i class="fas fa-th-large text-blue-600 group-hover:text-white text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Patio Cleaning</h3>
+                <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">Deep pressure cleaning for stone, concrete, or pavers to make your outdoor space look new.</p>
+                <ul class="text-sm text-gray-500 dark:text-gray-400 space-y-2">
+                    <li><i class="fas fa-check text-blue-600 mr-2"></i> Stain Removal</li>
+                    <li><i class="fas fa-check text-blue-600 mr-2"></i> Weed Prevention</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section 3 — Commercial Services -->
+<section class="py-24 px-6 bg-slate-900 text-white overflow-hidden relative">
+    <!-- Background Decor -->
+    <div class="absolute top-0 right-0 w-96 h-96 bg-blue-600 opacity-10 blur-[120px] rounded-full"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+        <div class="text-center lg:text-left mb-16">
+            <span class="text-blue-400 font-bold uppercase tracking-widest text-xs">For Your Business</span>
+            <h2 class="font-cormorant text-5xl font-bold mt-2">Commercial Cleaning</h2>
+            <p class="text-gray-400 mt-4 max-w-xl">We handle large-scale projects with industrial-grade equipment and professional precision.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+            <!-- Office Washing -->
+            <div class="border-l-2 border-blue-600/30 pl-8 py-4 hover:border-blue-500 transition-all group">
+                <h4 class="text-blue-400 font-bold mb-2">01</h4>
+                <h3 class="text-2xl font-bold mb-4 group-hover:text-blue-400 transition-colors">Office Washing</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Full exterior building wash including windows, entryways, and signage to keep your brand looking sharp.</p>
+            </div>
+
+            <!-- Parking Area Cleaning -->
+            <div class="border-l-2 border-blue-600/30 pl-8 py-4 hover:border-blue-500 transition-all group">
+                <h4 class="text-blue-400 font-bold mb-2">02</h4>
+                <h3 class="text-2xl font-bold mb-4 group-hover:text-blue-400 transition-colors">Parking Area Cleaning</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Removing oil spills, tire marks, and heavy grime from parking lots and garages using high-pressure steam.</p>
+            </div>
+
+            <!-- Building Cleaning -->
+            <div class="border-l-2 border-blue-600/30 pl-8 py-4 hover:border-blue-500 transition-all group">
+                <h4 class="text-blue-400 font-bold mb-2">03</h4>
+                <h3 class="text-2xl font-bold mb-4 group-hover:text-blue-400 transition-colors">Building Cleaning</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Multi-story building maintenance and warehouse exterior restoration for long-term durability.</p>
+            </div>
+        </div>
+
+        <div class="mt-16 text-center lg:text-left">
+            <a href="contact.html" class="px-10 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-bold uppercase tracking-widest text-xs transition-all">Get Corporate Quote</a>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Section 4 — Soft Washing Details -->
+<section class="py-24 px-6 bg-[#f8fbff] dark:bg-gray-800 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col lg:flex-row items-center gap-16">
+            
+            <!-- Left Side: Visual Element (Image with badge) -->
+            <div class="w-full lg:w-1/2 relative">
+                <div class="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white dark:border-gray-700">
+                    <img src="img/home6.webp" 
+                         alt="Soft Washing Process" 
+                         class="w-full h-[500px] object-cover">
+                    
+                    <!-- Floating Badge -->
+                    <div class="absolute top-6 right-6 bg-blue-600 text-white p-6 rounded-3xl shadow-xl flex flex-col items-center">
+                        <i class="fas fa-shield-alt text-2xl mb-2"></i>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-center">Safe for <br> Delicate Surfaces</span>
+                    </div>
+                </div>
+                <!-- Decorative Blur -->
+                <div class="absolute -bottom-10 -left-10 w-64 h-64 bg-blue-400/20 rounded-full blur-3xl -z-10"></div>
+            </div>
+
+            <!-- Right Side: Content -->
+            <div class="w-full lg:w-1/2">
+                <span class="text-blue-600 font-bold uppercase tracking-[0.3em] text-xs mb-4 block">The Science of Clean</span>
+                <h2 class="font-cormorant text-4xl md:text-5xl text-gray-900 dark:text-white font-bold mb-8 transition-colors">Why Soft Washing is Better?</h2>
+                
+                <div class="space-y-10">
+                    <!-- Point 1: Low-Pressure Cleaning -->
+                    <div class="flex gap-6 group">
+                        <div class="flex-shrink-0 w-14 h-14 bg-white dark:bg-gray-700 rounded-2xl shadow-md flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                            <i class="fas fa-compress-arrows-alt text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Low-Pressure Cleaning</h4>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                                Unlike high-pressure washing that can crack shingles or damage siding, our soft wash uses only as much pressure as a garden hose.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Point 2: Safe Chemicals -->
+                    <div class="flex gap-6 group">
+                        <div class="flex-shrink-0 w-14 h-14 bg-white dark:bg-gray-700 rounded-2xl shadow-md flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                            <i class="fas fa-flask text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Safe Chemicals</h4>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                                We use biodegradable, eco-friendly cleaning solutions that kill bacteria, mold, and algae at the root, making it safer for your plants and pets.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Point 3: Delicate Surface Protection -->
+                    <div class="flex gap-6 group">
+                        <div class="flex-shrink-0 w-14 h-14 bg-white dark:bg-gray-700 rounded-2xl shadow-md flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                            <i class="fas fa-feather text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Delicate Surface Protection</h4>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                                Perfect for roofs, wooden decks, and windows. We remove the grime without stripping the paint or ruining the surface texture.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    
+
+<!-- Section 5 — Service Benefits -->
+<section class="py-24 px-6 bg-white dark:bg-gray-900 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-20">
+            <span class="text-blue-600 font-bold uppercase tracking-[0.3em] text-xs mb-3 block">Why Invest in Cleaning?</span>
+            <h2 class="font-cormorant text-5xl text-gray-900 dark:text-white font-bold transition-colors">Long-term Benefits</h2>
+            <div class="w-16 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <!-- Benefit 1: Improves Appearance -->
+            <div class="group text-center p-8 bg-blue-50/50 dark:bg-gray-800 rounded-[3rem] border border-blue-100 dark:border-gray-700 hover:shadow-xl transition-all">
+                <div class="w-20 h-20 bg-white dark:bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-8 shadow-md group-hover:scale-110 transition-transform">
+                    <i class="fas fa-magic text-blue-600 text-3xl"></i>
+                </div>
+                <h4 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Improves Appearance</h4>
+                <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                    Instantly boost your property's curb appeal. We remove years of stains, making your home or office look fresh and inviting.
+                </p>
+            </div>
+
+            <!-- Benefit 2: Prevents Damage -->
+            <div class="group text-center p-8 bg-blue-50/50 dark:bg-gray-800 rounded-[3rem] border border-blue-100 dark:border-gray-700 hover:shadow-xl transition-all">
+                <div class="w-20 h-20 bg-white dark:bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-8 shadow-md group-hover:scale-110 transition-transform">
+                    <i class="fas fa-shield-alt text-blue-600 text-3xl"></i>
+                </div>
+                <h4 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Prevents Damage</h4>
+                <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                    Algae and moss can eat away at your roof and siding. Regular cleaning prevents costly repairs and structural issues.
+                </p>
+            </div>
+
+            <!-- Benefit 3: Increases Property Value -->
+            <div class="group text-center p-8 bg-blue-50/50 dark:bg-gray-800 rounded-[3rem] border border-blue-100 dark:border-gray-700 hover:shadow-xl transition-all">
+                <div class="w-20 h-20 bg-white dark:bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-8 shadow-md group-hover:scale-110 transition-transform">
+                    <i class="fas fa-chart-line text-blue-600 text-3xl"></i>
+                </div>
+                <h4 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Increases Property Value</h4>
+                <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                    A clean exterior is a major selling point. Professional maintenance can significantly increase the resale value of your property.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section 6 — Service Booking CTA -->
+<section class="py-24 px-6 relative overflow-hidden">
+    <!-- Decorative background glow -->
+    <div class="absolute inset-0 bg-blue-600 dark:bg-blue-700"></div>
+    <div class="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full -mr-20 -mt-20 blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-black/10 rounded-full -ml-20 -mb-20 blur-3xl"></div>
+
+    <div class="max-w-5xl mx-auto relative z-10 text-center">
+        <h2 class="font-cormorant text-4xl md:text-7xl text-white font-bold mb-8 leading-tight">
+            Ready to <span class="italic text-blue-200">Transform</span> Your Property?
+        </h2>
+        <p class="text-blue-50 text-lg md:text-xl mb-12 max-w-2xl mx-auto opacity-90 leading-relaxed">
+            Get a free, no-obligation quote today and see why we are the most trusted cleaning experts in Tamil Nadu.
+        </p>
+
+        <div class="flex flex-wrap gap-6 justify-center">
+            <a href="booking.html" class="px-12 py-5 bg-white text-blue-600 rounded-full font-bold tracking-widest uppercase hover:bg-gray-100 transition-all shadow-2xl shadow-black/10 flex items-center gap-3">
+                <i class="fas fa-calendar-check"></i> Book Your Service
+            </a>
+            <a href="https://wa.me/911234567890" class="px-12 py-5 bg-green-500 text-white rounded-full font-bold tracking-widest uppercase hover:bg-green-600 transition-all shadow-2xl shadow-black/10 flex items-center gap-3">
+                <i class="fab fa-whatsapp text-xl"></i> Instant Quote
+            </a>
+        </div>
+        
+        <p class="mt-10 text-blue-100 text-sm font-medium tracking-wide">
+            <i class="fas fa-star text-yellow-400 mr-2"></i> Join 500+ satisfied home and business owners!
+        </p>
+    </div>
+</section>
+
+
+
+        
+    </main>
+
+    <!-- FOOTER CONTAINER -->
+    <div id="footer-root"></div>
+
+    <script src="navbar.js"></script>
+    <script src="footer.js"></script>
+</body>
+</html>

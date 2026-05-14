@@ -1,0 +1,414 @@
+ <!DOCTYPE html>
+<html lang="en" id="htmlTag" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>ColorStudio | Premium Pressure Washing & Color Solutions</title>
+    <link rel="icon" type="image/png" href="https://img.icons8.com/color/48/paint-palette.png">
+    <script src="tailwind.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="icon" type="img/jpg" href="img/growwpark-logo.jpg">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E88E5',      // Fresh blue
+                        secondary: '#0D47A1',
+                        accent: '#42A5F5',
+                        warm: '#FFB74D',
+                        earth: '#78909C'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        * {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+            -webkit-tap-highlight-color: transparent;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            width: 100%;
+            background: #F0F7FF;
+        }
+        .dark body {
+            background: #0F172A;
+        }
+        .sidebar-active {
+            background: rgba(30, 136, 229, 0.1);
+            border-left: 4px solid #1E88E5;
+            color: #1E88E5 !important;
+            font-weight: 700;
+        }
+        [dir="rtl"] .sidebar-active {
+            border-left: 0;
+            border-right: 4px solid #1E88E5;
+        }
+        .custom-shadow {
+            box-shadow: 0 10px 25px -5px rgba(30, 136, 229, 0.12);
+        }
+        .dark .custom-shadow {
+            box-shadow: 0 10px 25px -5px rgba(30, 136, 229, 0.2);
+        }
+        .page-node {
+            display: none;
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        .page-node.active {
+            display: block;
+            animation: fadeInUp 0.4s ease forwards;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 1023px) {
+            #sidebar {
+                width: 280px;
+                box-shadow: 0 0 30px rgba(30, 136, 229, 0.15);
+            }
+        }
+        button, a {
+            min-height: 44px;
+            min-width: 44px;
+            cursor: pointer;
+        }
+        @media (max-width: 640px) {
+            table { display: block; width: 100%; overflow-x: auto; }
+        }
+        .status-badge {
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+        .color-swatch {
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            display: inline-block;
+            margin-right: 6px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        .project-card:hover {
+            transform: translateY(-4px);
+            transition: all 0.3s ease;
+        }
+        .top-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        @media (max-width: 640px) {
+            .top-actions { gap: 8px; }
+        }
+        /* Water splash effect for pressure washing */
+        .service-card {
+            transition: all 0.25s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-6px);
+        }
+
+        :root {
+            --nb-blue-600: #2563eb;
+            --nb-slate-900: #0f172a;
+            --nb-font: 'Plus Jakarta Sans', system-ui, sans-serif;
+            --nb-ease: cubic-bezier(0.4, 0, 0.2, 1);
+            --nb-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --nb-t-fast: 0.18s;
+            --nb-t: 0.28s;
+        }
+
+        .nb-logo {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            text-decoration: none;
+            flex-shrink: 0;
+            transition: opacity var(--nb-t-fast);
+        }
+        .nb-logo:hover { opacity: 0.88; }
+        .nb-logo-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 18px rgba(37, 99, 235, 0.38);
+            flex-shrink: 0;
+            position: relative;
+            overflow: hidden;
+            transition: transform var(--nb-t) var(--nb-spring), box-shadow var(--nb-t) var(--nb-ease);
+        }
+        .nb-logo-icon::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent 340deg, rgba(255,255,255,0.25) 360deg);
+            animation: nb-spin 6s linear infinite;
+        }
+        @keyframes nb-spin { to { transform: rotate(360deg); } }
+        .nb-logo:hover .nb-logo-icon {
+            transform: scale(1.07) rotate(-4deg);
+            box-shadow: 0 8px 28px rgba(37, 99, 235, 0.48);
+        }
+        .nb-logo-svg { position: relative; z-index: 1; }
+        .nb-logo-text { display: flex; flex-direction: column; line-height: 1.15; }
+        .nb-logo-name {
+            font-family: var(--nb-font);
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--nb-slate-900);
+            letter-spacing: -0.03em;
+            white-space: nowrap;
+        }
+        .nb-logo-tag {
+            font-family: var(--nb-font);
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--nb-blue-600);
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+        @media (max-width: 640px) {
+            .nb-logo-icon { width: 36px; height: 36px; border-radius: 10px; }
+            .nb-logo-name { font-size: 16px; }
+            .nb-logo-tag { font-size: 9px; }
+        }
+    </style>
+</head>
+<body class="bg-blue-50 dark:bg-[#0F172A] text-gray-900 dark:text-gray-100 antialiased">
+
+    <div id="sidebarOverlay" onclick="toggleSidebar()" class="fixed inset-0 bg-black/50 z-40 hidden lg:hidden transition-opacity duration-300"></div>
+
+    <div class="flex min-h-screen relative w-full overflow-x-hidden">
+        <!-- Sidebar - Logout at bottom only -->
+        <aside id="sidebar" class="fixed inset-y-0 left-0 z-50 w-[280px] bg-white dark:bg-[#1E293B] text-gray-500 dark:text-gray-400 transition-all duration-300 ease-in-out lg:translate-x-0 -translate-x-full border-r border-blue-100 dark:border-gray-700 overflow-y-auto flex flex-col">
+            <div class="p-5 h-full flex flex-col">
+                <!-- Logo -->
+                <div class="flex items-center justify-between mb-8">
+                    <a href="index.html" class="nb-logo">
+                      <div class="nb-logo-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/>
+                          <path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/>
+                        </svg>
+                      </div>
+                      <div class="nb-logo-text">
+                        <span class="nb-logo-name">ProWash</span>
+                        <span class="nb-logo-tag">Pressure & Soft Wash</span>
+                      </div>
+                    </a>
+                    <button onclick="toggleSidebar()" class="lg:hidden p-2 hover:bg-blue-100 dark:hover:bg-gray-700 rounded-lg">
+                        <i data-lucide="x" class="w-5 h-5"></i>
+                    </button>
+                </div>
+
+                <!-- Client Profile Card (mobile/tablet compact) -->
+                <div class="bg-gradient-to-r from-primary/10 to-blue-50 dark:from-primary/5 dark:to-gray-800 p-4 rounded-2xl mb-6 border border-primary/20 lg:hidden">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary text-xl">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <div>
+                            <p class="font-black text-gray-900 dark:text-white text-sm">Sarah Mitchell</p>
+                            <p class="text-[9px] text-gray-500">sarah.m@homedesign.com</p>
+                            <div class="flex items-center gap-1 mt-1">
+                                <span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
+                                <span class="text-[7px] font-bold text-green-600">Active Service</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-4 p-2 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-primary/20 text-center">
+                    <span class="text-[8px] font-black text-primary uppercase tracking-widest">💧 Premium Pressure Washing • Eco-Friendly Soft Wash • Since 2024</span>
+                </div>
+
+                <!-- Navigation Menu -->
+                <nav class="flex-1 space-y-1 overflow-y-auto">
+                    <p class="text-[10px] font-black uppercase tracking-widest text-primary/60 mb-3 ml-2">
+                        <i data-lucide="droplet" class="w-3 h-3 inline mr-1"></i> MY SERVICES
+                    </p>
+                    <a href="javascript:void(0)" onclick="showPage('dashboard')" id="btn-dashboard" class="nav-btn flex items-center gap-3 p-3.5 rounded-xl sidebar-active transition-all hover:bg-blue-50 dark:hover:bg-white/5 group">
+                        <i data-lucide="home" class="w-5 h-5 group-hover:scale-110 transition-transform text-primary"></i>
+                        <span class="font-medium">Dashboard</span>
+                        <span class="ml-auto bg-primary/10 text-primary text-[8px] font-black px-2 py-1 rounded-full">Active</span>
+                    </a>
+                    <a href="javascript:void(0)" onclick="showPage('projects')" id="btn-projects" class="nav-btn flex items-center gap-3 p-3.5 rounded-xl hover:bg-blue-50 dark:hover:bg-white/5 transition-all group">
+                        <i data-lucide="paintbrush-2" class="w-5 h-5 group-hover:scale-110 transition-transform"></i>
+                        <span class="font-medium">My Projects</span>
+                        <span class="ml-auto bg-accent/20 text-accent text-[8px] font-black px-2 py-1 rounded-full">2 Active</span>
+                    </a>
+                    <a href="javascript:void(0)" onclick="showPage('washing')" id="btn-washing" class="nav-btn flex items-center gap-3 p-3.5 rounded-xl hover:bg-blue-50 dark:hover:bg-white/5 transition-all group">
+                        <i data-lucide="droplets" class="w-5 h-5 group-hover:scale-110 transition-transform"></i>
+                        <span class="font-medium">Pressure Washing</span>
+                        <span class="ml-auto bg-primary text-white text-[8px] font-black px-2 py-1 rounded-full">New</span>
+                    </a>
+                    <a href="javascript:void(0)" onclick="showPage('consultations')" id="btn-consultations" class="nav-btn flex items-center gap-3 p-3.5 rounded-xl hover:bg-blue-50 dark:hover:bg-white/5 transition-all group">
+                        <i data-lucide="message-square" class="w-5 h-5 group-hover:scale-110 transition-transform"></i>
+                        <span class="font-medium"> Consults</span>
+                        <span class="ml-auto bg-primary text-white text-[8px] font-black px-2 py-1 rounded-full">Upcoming</span>
+                    </a>
+                
+                    <a href="javascript:void(0)" onclick="showPage('settings')" id="btn-settings" class="nav-btn flex items-center gap-3 p-3.5 rounded-xl hover:bg-blue-50 dark:hover:bg-white/5 transition-all group">
+                        <i data-lucide="settings" class="w-5 h-5 group-hover:scale-110 transition-transform"></i>
+                        <span class="font-medium">Account Settings</span>
+                    </a>
+                </nav>
+
+                <!-- Sidebar Bottom: ONLY LOGOUT BUTTON -->
+                <div class="pt-6 mt-6 border-t border-blue-200 dark:border-gray-700">
+                    <button onclick="handleLogout()" class="w-full flex items-center justify-center gap-3 p-3.5 rounded-xl bg-primary/10 text-primary hover:bg-primary/20 transition-all group">
+                        <i data-lucide="log-out" class="w-5 h-5 group-hover:scale-110 transition-transform"></i>
+                        <span class="font-medium text-sm">Logout</span>
+                    </button>
+                    <!-- Service Expert Info -->
+                    <div class="mt-4 p-3 bg-gradient-to-r from-primary/10 to-blue-100 dark:from-primary/5 dark:to-gray-800 rounded-xl border border-primary/20">
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="star" class="w-4 h-4 text-accent"></i>
+                            <p class="text-[9px] font-black uppercase tracking-wider">Your Wash Specialist: Marcus</p>
+                        </div>
+                        <p class="text-[8px] text-gray-500 mt-1">Soft wash & pressure experts</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 lg:ml-[280px] p-4 sm:p-5 md:p-6 lg:p-8 transition-all duration-300 w-full max-w-full overflow-x-hidden">
+            <!-- Header with Top Right Actions -->
+            <header class="flex items-center justify-between mb-6 sm:mb-8 flex-wrap gap-3">
+                <div class="flex-1">
+                    <div class="flex items-center gap-3">
+                        <button onclick="toggleSidebar()" class="lg:hidden p-2.5 bg-white dark:bg-[#1E293B] rounded-xl custom-shadow border border-blue-200 dark:border-gray-700">
+                            <i data-lucide="menu" class="w-5 h-5 sm:w-6 sm:h-6 text-gray-600 dark:text-white"></i>
+                        </button>
+                        <div>
+                            <h1 id="pageTitle" class="text-xl sm:text-2xl font-black tracking-tight uppercase">AQUACRAFT PORTAL</h1>
+                            <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-medium mt-0.5">
+                                <span class="text-primary font-black">Welcome back, Sarah!</span> · Pressure washing & color harmony experts
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TOP RIGHT ACTIONS -->
+                <div class="top-actions">
+                    <div class="hidden sm:flex items-center gap-2 bg-white dark:bg-[#1E293B] px-3 py-2 rounded-xl custom-shadow">
+                        <i data-lucide="droplet" class="w-4 h-4 text-primary"></i>
+                        <span class="text-xs font-medium">Eco Soft Wash</span>
+                    </div>
+                    
+                    <button onclick="toggleDirection()" class="p-2.5 bg-white dark:bg-[#1E293B] rounded-xl custom-shadow border border-blue-200 dark:border-gray-700 hover:bg-blue-50 dark:hover:bg-gray-700 transition-all text-primary">
+                        <i class="fa-solid fa-left-right text-sm"></i>
+                    </button>
+                    
+                    <button onclick="toggleDarkMode()" class="p-2.5 bg-white dark:bg-[#1E293B] rounded-xl custom-shadow border border-blue-200 dark:border-gray-700 hover:scale-110 transition-all text-primary">
+                        <i id="themeIcon" data-lucide="moon" class="w-5 h-5"></i>
+                    </button>
+
+                    <div class="hidden sm:flex items-center gap-2 bg-white dark:bg-[#1E293B] pl-2 pr-3 py-1.5 rounded-xl custom-shadow border border-blue-200 dark:border-gray-700">
+                        <div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+                            <i class="fas fa-tachometer-alt text-sm"></i>
+                        </div>
+                        <div class="leading-tight">
+                            <p class="font-bold text-xs">Sarah Mitchell</p>
+                            <p class="text-[8px] text-primary font-black">Premium Client</p>
+                        </div>
+                    </div>
+                    <div class="sm:hidden flex items-center">
+                        <div class="w-9 h-9 rounded-full bg-primary/20 flex items-center justify-center text-primary border border-primary/30">
+                            <i class="fas fa-user-astronaut text-sm"></i>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Hero Banner updated with pressure washing vibe -->
+        
+
+            <!-- CLIENT PAGES -->
+            <div id="mainDisplay" class="space-y-6">
+                <!-- DASHBOARD (Enhanced with pressure washing stats) -->
+                <div id="page-dashboard" class="page-node active">
+                    <div class="bg-gradient-to-r from-primary/10 to-blue-100 dark:from-primary/5 dark:to-gray-800 p-5 rounded-2xl mb-6 border border-primary/20">
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                            <div>
+                                <h2 class="text-lg font-black">💧 Complete Exterior Care + Color Studio</h2>
+                                <p class="text-xs text-gray-600 dark:text-gray-300 mt-1">Pressure washing scheduled for this Friday. Next color consultation: Tomorrow at 2 PM</p>
+                            </div>
+                            <button onclick="showPage('washing')" class="bg-primary text-white text-[10px] font-black px-5 py-2.5 rounded-xl whitespace-nowrap">View Wash Services →</button>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-6 sm:mb-8">
+                        <div class="bg-white dark:bg-[#1E293B] p-4 rounded-2xl custom-shadow border border-blue-200"><div class="flex items-center justify-between mb-2"><p class="text-[9px] font-black text-primary uppercase tracking-widest">ACTIVE SERVICES</p><i class="fas fa-water text-primary text-lg"></i></div><h3 class="text-2xl font-black">3</h3><p class="text-[9px] text-gray-500 mt-1">Pressure Wash · Soft Wash · Living Room Paint</p></div>
+                        <div class="bg-white dark:bg-[#1E293B] p-4 rounded-2xl custom-shadow"><p class="text-[9px] font-black text-primary uppercase tracking-widest mb-2">UPCOMING WASHES</p><h3 class="text-2xl font-black">2</h3><p class="text-[9px] text-gray-500">Driveway + House Siding</p></div>
+                        <div class="bg-white dark:bg-[#1E293B] p-4 rounded-2xl custom-shadow"><p class="text-[9px] font-black text-primary uppercase tracking-widest mb-2">PALETTE FAVORITES</p><h3 class="text-2xl font-black">8</h3><p class="text-[9px] text-gray-500">Saved color schemes</p></div>
+                        <div class="bg-white dark:bg-[#1E293B] p-4 rounded-2xl custom-shadow"><p class="text-[9px] font-black text-primary uppercase tracking-widest mb-2">WASH PROGRESS</p><h3 class="text-2xl font-black">40%</h3><p class="text-[9px] text-gray-500">Soft wash completion</p></div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                        <div class="bg-white dark:bg-[#1E293B] p-5 rounded-2xl custom-shadow"><h3 class="text-sm font-black uppercase mb-4 flex items-center gap-2"><i data-lucide="home" class="w-4 h-4 text-primary"></i>Pressure Washing: Driveway & Patio</h3><div class="space-y-4"><div><div class="flex justify-between text-[10px] font-bold mb-1"><span>Service Plan</span><span>60%</span></div><div class="w-full bg-gray-200 rounded-full h-2"><div class="bg-primary h-2 rounded-full" style="width:60%"></div></div></div><div class="flex gap-3 flex-wrap"><div class="flex items-center gap-2"><i class="fas fa-broom text-primary text-sm"></i><span class="text-xs">Soft Washing Prep</span></div><div class="flex items-center gap-2"><i class="fas fa-spray-can-sparkles text-primary text-sm"></i><span class="text-xs">Eco Solution</span></div></div><p class="text-[10px] text-gray-500 mt-2">Scheduled for Friday, 9 AM – includes house siding wash</p></div></div>
+                        <div class="bg-white dark:bg-[#1E293B] p-5 rounded-2xl custom-shadow"><h3 class="text-sm font-black uppercase mb-4 flex items-center gap-2"><i data-lucide="calendar" class="w-4 h-4 text-primary"></i>Upcoming Consultation</h3><div class="bg-blue-50 dark:bg-gray-800/50 p-4 rounded-xl"><div class="flex items-center gap-3"><div class="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center"><i class="fas fa-video text-accent"></i></div><div><p class="font-black text-sm">Virtual Color Consultation</p><p class="text-[10px] text-gray-500">Tomorrow, 2:00 PM EST</p><p class="text-[8px] text-primary mt-1">With Elena, Senior Color Consultant</p></div></div><button class="mt-3 w-full bg-primary/10 text-primary text-[10px] font-black py-2 rounded-lg">Join Meeting</button></div></div>
+                    </div>
+
+                </div>
+
+                <!-- MY PROJECTS (original painting + washing related) -->
+                <div id="page-projects" class="page-node"><div class="bg-white dark:bg-[#1E293B] p-6 rounded-2xl custom-shadow"><div class="flex justify-between items-center mb-6"><h3 class="text-lg font-black flex items-center gap-2"><i data-lucide="paintbrush-2" class="w-5 h-5 text-primary"></i>My Active Projects</h3><button class="bg-primary text-white text-[10px] font-black px-4 py-2 rounded-xl">+ New Project</button></div><div class="space-y-4"><div class="project-card p-4 bg-blue-50 dark:bg-gray-800/50 rounded-xl"><div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3"><div class="flex items-center gap-3"><div class="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center"><i class="fas fa-couch text-primary text-xl"></i></div><div><h4 class="font-black">Living Room Makeover</h4><p class="text-[9px] text-gray-500">Accent wall</p><div class="flex gap-2 mt-1"></div></div></div><div class="text-right"><span class="status-badge bg-warm/20 text-warm">In Progress</span><p class="text-[10px] font-bold mt-1">65% Complete</p></div></div><div class="w-full bg-gray-200 rounded-full h-1.5 mt-3"><div class="bg-primary h-1.5 rounded-full" style="width:65%"></div></div></div><div class="project-card p-4 bg-blue-50 dark:bg-gray-800/50 rounded-xl"><div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3"><div class="flex items-center gap-3"><div class="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center"><i class="fas fa-tachometer-alt text-accent text-xl"></i></div><div><h4 class="font-black">Driveway & Siding Pressure Wash</h4><p class="text-[9px] text-gray-500">Scheduled for May 24</p><div class="flex gap-2 mt-1"><i class="fas fa-water"></i><span class="text-[8px]">Soft Wash Method</span></div></div></div><div class="text-right"><span class="status-badge bg-primary/20 text-primary">Upcoming</span><p class="text-[10px] font-bold mt-1">0% Started</p></div></div><div class="w-full bg-gray-200 rounded-full h-1.5 mt-3"><div class="bg-accent h-1.5 rounded-full" style="width:0%"></div></div></div></div></div></div>
+
+                <!-- NEW PRESSURE WASHING & SOFT WASHING PAGE (added full dedicated service) -->
+                <div id="page-washing" class="page-node"><div class="bg-white dark:bg-[#1E293B] p-6 rounded-2xl custom-shadow"><div class="flex justify-between items-center mb-5"><h3 class="text-lg font-black flex items-center gap-2"><i data-lucide="droplets" class="w-6 h-6 text-primary"></i>Pressure Washing & Soft Washing Services</h3><span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-[9px] font-black">Eco-Friendly</span></div><div class="grid md:grid-cols-2 gap-6"><div class="service-card bg-gradient-to-br from-blue-50 to-white dark:from-gray-800 dark:to-gray-900 p-5 rounded-xl border border-primary/30"><div class="flex justify-between items-start"><div><i class="fas fa-water fa-2x text-primary mb-2"></i><h4 class="font-black text-md">Soft Washing (Gentle Clean)</h4><p class="text-[10px] text-gray-500 mt-1">Low pressure + biodegradable solutions for roofs, siding, stucco.</p><ul class="text-[9px] mt-3 space-y-1"><li>✓ Kills mold & mildew</li><li>✓ Paint-safe finish</li><li>✓ Extends surface life</li></ul><button class="mt-4 bg-primary text-white text-[9px] font-black px-4 py-2 rounded-lg">Schedule Soft Wash →</button></div><div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center"><i class="fas fa-leaf text-primary"></i></div></div></div><div class="service-card bg-gradient-to-br from-blue-50 to-white dark:from-gray-800 dark:to-gray-900 p-5 rounded-xl border border-secondary/30"><div class="flex justify-between items-start"><div><i class="fas fa-tachometer-alt fa-2x text-secondary mb-2"></i><h4 class="font-black text-md">Pressure Washing (Heavy Duty)</h4><p class="text-[10px] text-gray-500 mt-1">High-pressure cleaning for concrete, brick, driveways, patios.</p><ul class="text-[9px] mt-3 space-y-1"><li>✓ Removes oil stains</li><li>✓ Restores concrete color</li><li>✓ Graffiti & gum removal</li></ul><button class="mt-4 bg-secondary text-white text-[9px] font-black px-4 py-2 rounded-lg">Book Pressure Wash →</button></div><div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center"><i class="fas fa-brush text-secondary"></i></div></div></div></div><div class="mt-6 p-4 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex flex-wrap justify-between items-center"><div><p class="text-xs font-black">📅 Next available slot: Friday, May 26 · 8:00 AM - 12 PM</p><p class="text-[9px] text-gray-600">Includes free color consultation add-on for exterior paint prep</p></div><button class="bg-primary text-white text-[9px] px-5 py-2 rounded-full">Request Quote</button></div><div class="mt-5 text-center text-[9px] text-gray-400">*All pressure washing services include a pre-inspection and gentle technique for painted surfaces.</div></div></div>
+
+                <!-- CONSULTATIONS (unchanged but integrated) -->
+                <div id="page-consultations" class="page-node"><div class="bg-white dark:bg-[#1E293B] p-6 rounded-2xl custom-shadow"><h3 class="text-lg font-black uppercase mb-6 flex items-center gap-2"><i data-lucide="message-square" class="w-5 h-5 text-primary"></i>Color Consultations</h3><div class="space-y-4"><div class="p-4 bg-gradient-to-r from-primary/5 to-blue-50 dark:from-primary/5 dark:to-gray-800 rounded-xl border-l-4 border-primary"><div class="flex items-start justify-between"><div><p class="font-black text-sm">Virtual Color Consultation - Living Room</p><p class="text-[10px] text-gray-500 mt-1">Tomorrow · 2:00 PM EST · 30 min session</p><p class="text-[9px] mt-2">🎨 Topics: Final paint selection, accent wall ideas</p></div><button class="bg-primary text-white text-[9px] font-black px-3 py-1.5 rounded-lg">Join</button></div></div><div class="p-4 bg-gray-50 dark:bg-gray-800/30 rounded-xl"><div class="flex items-start justify-between"><div><p class="font-black text-sm">Completed: Color Palette Presentation</p><p class="text-[10px] text-gray-500">March 10, 2024 · with Elena</p><p class="text-[9px] text-green-600 mt-1">✓ Approved palette: Warm Neutrals Collection</p></div><i class="fas fa-check-circle text-green-500 text-xl"></i></div></div></div><div class="mt-6 pt-4 border-t border-indigo-100"><button class="w-full bg-primary/10 text-primary text-[10px] font-black py-3 rounded-xl">Schedule New Consultation</button></div></div></div>
+
+                <!-- COLOR LIBRARY -->
+                <div id="page-palettes" class="page-node"><div class="bg-white dark:bg-[#1E293B] p-6 rounded-2xl custom-shadow"><h3 class="text-lg font-black uppercase mb-6 flex items-center gap-2"><i data-lucide="palette" class="w-5 h-5 text-primary"></i>My Color Palette Library</h3><div class="grid grid-cols-1 sm:grid-cols-2 gap-4"><div class="p-4 rounded-xl border border-blue-100 hover:shadow-md transition"><div class="flex gap-2 mb-3"><div class="w-10 h-10 rounded-lg" style="background:#C5A572;"></div><div class="w-10 h-10 rounded-lg" style="background:#7C9A6E;"></div><div class="w-10 h-10 rounded-lg" style="background:#E8D5B5;"></div><div class="w-10 h-10 rounded-lg" style="background:#A67B5B;"></div></div><p class="font-black text-sm">Warm Earth Collection</p><p class="text-[8px] text-gray-500">Perfect for living rooms · 4 colors</p><button class="mt-2 text-primary text-[8px] font-black">Save to Favorites</button></div><div class="p-4 rounded-xl border border-blue-100 hover:shadow-md transition"><div class="flex gap-2 mb-3"><div class="w-10 h-10 rounded-lg" style="background:#9BB7D4;"></div><div class="w-10 h-10 rounded-lg" style="background:#D9C8A9;"></div><div class="w-10 h-10 rounded-lg" style="background:#A2B9C2;"></div></div><p class="font-black text-sm">Coastal Serenity</p><p class="text-[8px] text-gray-500">Bedroom inspired · 3 colors</p><button class="mt-2 text-primary text-[8px] font-black">Save to Favorites</button></div></div></div></div>
+
+                <!-- SETTINGS -->
+                <div id="page-settings" class="page-node"><div class="bg-white dark:bg-[#1E293B] p-6 rounded-2xl custom-shadow"><h3 class="text-lg font-black uppercase mb-6 flex items-center gap-2"><i data-lucide="settings" class="w-5 h-5 text-primary"></i>Account Settings</h3><div class="space-y-6"><div><label class="text-[10px] font-black text-primary uppercase">Full Name</label><input type="text" value="Sarah Mitchell" class="w-full mt-1 px-4 py-2 bg-blue-50 dark:bg-gray-800 rounded-xl text-sm"></div><div><label class="text-[10px] font-black text-primary uppercase">Email Address</label><input type="email" value="sarah.m@homedesign.com" class="w-full mt-1 px-4 py-2 bg-blue-50 dark:bg-gray-800 rounded-xl text-sm"></div><div><label class="text-[10px] font-black text-primary uppercase">Phone Number</label><input type="tel" value="+1 (415) 555-9876" class="w-full mt-1 px-4 py-2 bg-blue-50 dark:bg-gray-800 rounded-xl text-sm"></div><div><label class="text-[10px] font-black text-primary uppercase">Notification Preferences</label><div class="mt-2 space-y-2"><label class="flex items-center gap-2"><input type="checkbox" checked class="rounded text-primary"> <span class="text-xs">Email: Color tips & inspiration</span></label><label class="flex items-center gap-2"><input type="checkbox" checked class="rounded text-primary"> <span class="text-xs">SMS: Consultation & Wash reminders</span></label></div></div><button class="bg-primary text-white text-xs font-black py-3 rounded-xl w-full">Save Changes</button></div></div></div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        lucide.createIcons();
+        function toggleSidebar() { const s = document.getElementById('sidebar'); const o = document.getElementById('sidebarOverlay'); s.classList.toggle('-translate-x-full'); if (window.innerWidth < 1024 && o) o.classList.toggle('hidden'); lucide.createIcons(); }
+        function toggleDarkMode() { document.documentElement.classList.toggle('dark'); localStorage.setItem('darkMode', document.documentElement.classList.contains('dark') ? 'dark' : 'light'); updateThemeIcon(); lucide.createIcons(); }
+        function updateThemeIcon() { const icon = document.getElementById('themeIcon'); if(icon) { icon.setAttribute('data-lucide', document.documentElement.classList.contains('dark') ? 'sun' : 'moon'); lucide.createIcons(); } }
+        if (localStorage.getItem('darkMode') === 'dark') document.documentElement.classList.add('dark'); else document.documentElement.classList.remove('dark'); updateThemeIcon();
+        function toggleDirection() { const html = document.getElementById('htmlTag'); html.dir = html.dir === 'rtl' ? 'ltr' : 'rtl'; lucide.createIcons(); }
+        function handleLogout() { alert("You have been securely logged out. (Demo)"); }
+        function showPage(pageId) {
+            document.querySelectorAll('.page-node').forEach(p => p.classList.remove('active'));
+            document.getElementById('page-' + pageId)?.classList.add('active');
+            const titles = { dashboard: 'AQUACRAFT DASHBOARD', projects: 'MY PROJECTS', washing: 'PRESSURE & SOFT WASH', consultations: 'COLOR CONSULTS', palettes: 'COLOR LIBRARY', settings: 'SETTINGS' };
+            document.getElementById('pageTitle').innerText = titles[pageId] || pageId.toUpperCase();
+            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('sidebar-active'));
+            document.getElementById('btn-' + pageId)?.classList.add('sidebar-active');
+            if (window.innerWidth < 1024) toggleSidebar();
+        }
+        document.addEventListener('DOMContentLoaded', () => { showPage('dashboard'); lucide.createIcons(); });
+    </script>
+</body>
+</html>

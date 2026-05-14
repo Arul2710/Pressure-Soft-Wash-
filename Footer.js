@@ -9,7 +9,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const footerRoot = document.getElementById("footer-root");
     if (!footerRoot) {
-        console.warn("[Footer] #footer-root element not found on this page.");
+        console.warn("[footer] #footer-root element not found on this page.");
         return;
     }
 

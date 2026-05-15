@@ -516,6 +516,7 @@ const NAVBAR_CSS = `
     color: var(--nb-slate-400);
     padding: 6px 10px 3px;
     margin-top: 4px;
+    flex-shrink: 0;
   }
 
   .nb-sb-link {
@@ -535,6 +536,7 @@ const NAVBAR_CSS = `
     cursor: pointer;
     text-decoration: none;
     transition: all var(--nb-t-fast);
+    flex-shrink: 0;
   }
   .nb-sb-link-left { display: flex; align-items: center; gap: 13px; }
   .nb-sb-link-left svg { color: var(--nb-blue-500); flex-shrink: 0; transition: transform var(--nb-t-fast); }
@@ -561,6 +563,7 @@ const NAVBAR_CSS = `
     max-height: 0;
     opacity: 0;
     transition: max-height 0.35s var(--nb-ease), opacity 0.25s var(--nb-ease);
+    flex-shrink: 0;
   }
   .nb-sb-sub.nb-open { max-height: 500px; opacity: 1; }
   .nb-sb-sub-inner {
@@ -1182,7 +1185,7 @@ function _buildDesktopLinks() {
       ).join('');
       return `
         <div class="nb-has-drop">
-          <button class="nb-nav-link${isActive ? ' nb-active' : ''}" onclick="NavBar._toggleDrop(event, this)">
+          <button type="button" class="nb-nav-link${isActive ? ' nb-active' : ''}" onclick="NavBar._toggleDrop(event, this)">
             ${_icon(link.icon, 15)}
             <span>${link.label}</span>
             <span class="nb-chevron">${_icon('ChevronDown', 11)}</span>
@@ -1208,7 +1211,7 @@ function _buildSidebarLinks() {
         </a>`
       ).join('');
       return `
-        <button class="nb-sb-link${isActive ? ' nb-active' : ''}" onclick="NavBar._toggleSub('nb-sub-${idx}', this)">
+        <button type="button" class="nb-sb-link${isActive ? ' nb-active' : ''}" onclick="NavBar._toggleSub(event, 'nb-sub-${idx}', this)">
           <span class="nb-sb-link-left">${_icon(link.icon, 16)}<span>${link.label}</span></span>
           <span class="nb-sb-link-right">${_icon('ChevronDown', 13)}</span>
         </button>
@@ -1379,7 +1382,11 @@ function closeSidebar() {
 /* ================================================================
    SUBMENU TOGGLE (sidebar)
 ================================================================ */
-function _toggleSub(id, btn) {
+function _toggleSub(event, id, btn) {
+  if (event) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
   const sub = document.getElementById(id);
   if (!sub) return;
   document.querySelectorAll('.nb-sb-sub.nb-open').forEach(el => {

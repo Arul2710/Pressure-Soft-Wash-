@@ -155,7 +155,7 @@ const NAVBAR_CSS = `
     font-family: var(--nb-font);
     font-size: 18px;
     font-weight: 800;
-    color: var(--nb-slate-900);
+    color: var(--nb-blue-600);
     letter-spacing: -0.03em;
     white-space: nowrap;
   }
@@ -199,22 +199,16 @@ const NAVBAR_CSS = `
                 background var(--nb-t-fast);
   }
 
-  .nb-nav-link svg { flex-shrink: 0; transition: color var(--nb-t-fast), transform var(--nb-t-fast); }
-
   .nb-nav-link:hover {
     color: var(--nb-blue-700);
     background: var(--nb-blue-50);
   }
-
-  .nb-nav-link:hover svg { color: var(--nb-blue-600); }
 
   .nb-nav-link.nb-active {
     color: var(--nb-blue-700);
     background: var(--nb-blue-50);
     font-weight: 700;
   }
-
-  .nb-nav-link.nb-active svg { color: var(--nb-blue-600); }
 
   /* active underline dot */
   .nb-nav-link::after {
@@ -585,7 +579,6 @@ const NAVBAR_CSS = `
     text-decoration: none;
     transition: all var(--nb-t-fast);
   }
-  .nb-sb-sub-link svg { color: var(--nb-blue-400); flex-shrink: 0; }
   .nb-sb-sub-link:hover { background: var(--nb-blue-50); color: var(--nb-blue-700); transform: translateX(4px); }
   .nb-sb-sub-link.nb-active { color: var(--nb-blue-700); background: var(--nb-blue-50); font-weight: 700; border: 1px solid rgba(37,99,235,0.16); }
 
@@ -732,14 +725,12 @@ const NAVBAR_CSS = `
     background: rgba(0, 0, 0, 0.97);
     border-bottom-color: rgba(255, 255, 255, 0.1);
   }
-  .dark .nb-logo-name { color: #fff; }
   .dark .nb-logo-tag { color: var(--nb-blue-400); }
   .dark .nb-nav-link { color: var(--nb-slate-300); }
   .dark .nb-nav-link:hover, .dark .nb-nav-link.nb-active {
     color: #fff;
     background: rgba(255, 255, 255, 0.08);
   }
-  .dark .nb-nav-link:hover svg, .dark .nb-nav-link.nb-active svg { color: var(--nb-blue-400); }
   .dark .nb-dropdown, .dark .nb-user-drop {
     background: rgba(0, 0, 0, 0.95);
     border-color: rgba(255, 255, 255, 0.1);
@@ -1179,14 +1170,12 @@ function _buildDesktopLinks() {
     if (link.children) {
       const items = link.children.map(c =>
         `<a href="${c.href}" class="nb-drop-item${_activeLink === c.label.toLowerCase() ? ' nb-active' : ''}" onclick="NavBar.closeSidebar()">
-          ${_icon(c.icon, 14)}
           <span>${c.label}</span>
         </a>`
       ).join('');
       return `
         <div class="nb-has-drop">
           <button type="button" class="nb-nav-link${isActive ? ' nb-active' : ''}" onclick="NavBar._toggleDrop(event, this)">
-            ${_icon(link.icon, 15)}
             <span>${link.label}</span>
             <span class="nb-chevron">${_icon('ChevronDown', 11)}</span>
           </button>
@@ -1194,7 +1183,6 @@ function _buildDesktopLinks() {
         </div>`;
     }
     return `<a href="${link.href}" class="nb-nav-link${isActive ? ' nb-active' : ''}">
-      ${_icon(link.icon, 15)}
       <span>${link.label}</span>
     </a>`;
   }).join('');
@@ -1206,13 +1194,12 @@ function _buildSidebarLinks() {
     if (link.children) {
       const sub = link.children.map(c =>
         `<a href="${c.href}" class="nb-sb-sub-link${_activeLink === c.label.toLowerCase() ? ' nb-active' : ''}" onclick="NavBar.closeSidebar()">
-          ${_icon(c.icon, 14)}
           <span>${c.label}</span>
         </a>`
       ).join('');
       return `
         <button type="button" class="nb-sb-link${isActive ? ' nb-active' : ''}" onclick="NavBar._toggleSub(event, 'nb-sub-${idx}', this)">
-          <span class="nb-sb-link-left">${_icon(link.icon, 16)}<span>${link.label}</span></span>
+          <span class="nb-sb-link-left"><span>${link.label}</span></span>
           <span class="nb-sb-link-right">${_icon('ChevronDown', 13)}</span>
         </button>
         <div class="nb-sb-sub" id="nb-sub-${idx}">
@@ -1220,7 +1207,7 @@ function _buildSidebarLinks() {
         </div>`;
     }
     return `<a href="${link.href}" class="nb-sb-link${isActive ? ' nb-active' : ''}" onclick="NavBar.closeSidebar()">
-      <span class="nb-sb-link-left">${_icon(link.icon, 16)}<span>${link.label}</span></span>
+      <span class="nb-sb-link-left"><span>${link.label}</span></span>
       <span class="nb-sb-link-right">${_icon('ChevronRight', 13)}</span>
     </a>`;
   }).join('');

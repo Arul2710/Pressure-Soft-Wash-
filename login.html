@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Pressure & Soft Wash • Login</title>
     <link rel="icon" type="img/jpg" href="img/growwpark-logo.jpg">
-    <script src="tailwind.js"></script>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,8 +14,13 @@
     <!-- Font Awesome 6 (free) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Tailwind CSS via CDN + custom config -->
+    <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
     
     <!-- custom override & smooth extras -->
     <style>
@@ -28,6 +32,7 @@
 
         body {
             font-family: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            transition: background 0.3s ease, color 0.3s ease;
         }
 
         /* custom aqua blue shimmer animation */
@@ -51,19 +56,10 @@
             animation: aquaPulse 1.2s infinite;
         }
         
-        /* custom focus rings - fresh blue */
-        input:focus {
-            ring: none;
-        }
-        .focus-ring-aqua:focus {
-            outline: none;
-            border-color: #2cc1e0;
-            box-shadow: 0 0 0 3px rgba(44, 193, 224, 0.3), 0 0 0 1px rgba(0, 150, 199, 0.2);
-        }
-        
-        /* smooth bg animated gradient (subtle) */
-        .aqua-bg-wave {
-            background: radial-gradient(circle at 20% 30%, rgba(0, 180, 216, 0.08) 0%, rgba(2, 110, 148, 0.02) 90%);
+        /* Keyboard focus-visible for accessibility */
+        *:focus-visible {
+            outline: 2px solid #0288d1;
+            outline-offset: 2px;
         }
         
         /* custom scroll */
@@ -87,6 +83,25 @@
             transform: rotate(180deg);
         }
 
+        [dir="rtl"] .pl-11 {
+            padding-left: 1rem;
+            padding-right: 2.75rem;
+        }
+        [dir="rtl"] .left-0 {
+            left: auto;
+            right: 0;
+        }
+        [dir="rtl"] .pr-12 {
+            padding-right: 1rem;
+            padding-left: 3rem;
+        }
+        [dir="rtl"] .right-0 {
+            right: auto;
+            left: 0;
+        }
+        [dir="rtl"] .text-left {
+            text-align: right;
+        }
 
         :root {
             --nb-blue-600: #2563eb;
@@ -98,104 +113,105 @@
             --nb-t: 0.28s;
         }
         
- /* ── Logo ── */
-  .nb-logo {
-    display: flex;
-    align-items: center;
-    gap: 11px;
-    text-decoration: none;
-    flex-shrink: 0;
-    transition: opacity var(--nb-t-fast);
-  }
-  .nb-logo:hover { opacity: 0.88; }
+        /* ── Logo ── */
+        .nb-logo {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            text-decoration: none;
+            flex-shrink: 0;
+            transition: opacity var(--nb-t-fast);
+        }
+        .nb-logo:hover { opacity: 0.88; }
 
-  .nb-logo-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 14px;
-    background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 18px rgba(37, 99, 235, 0.38);
-    flex-shrink: 0;
-    position: relative;
-    overflow: hidden;
-    transition: transform var(--nb-t) var(--nb-spring),
-                box-shadow var(--nb-t) var(--nb-ease);
-  }
+        .nb-logo-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 18px rgba(37, 99, 235, 0.38);
+            flex-shrink: 0;
+            position: relative;
+            overflow: hidden;
+            transition: transform var(--nb-t) var(--nb-spring),
+                        box-shadow var(--nb-t) var(--nb-ease);
+        }
 
-  .nb-logo-icon::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: conic-gradient(from 0deg, transparent 340deg, rgba(255,255,255,0.25) 360deg);
-    animation: nb-spin 6s linear infinite;
-  }
+        .nb-logo-icon::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent 340deg, rgba(255,255,255,0.25) 360deg);
+            animation: nb-spin 6s linear infinite;
+        }
 
-  @keyframes nb-spin { to { transform: rotate(360deg); } }
+        @keyframes nb-spin { to { transform: rotate(360deg); } }
 
-  .nb-logo:hover .nb-logo-icon {
-    transform: scale(1.07) rotate(-4deg);
-    box-shadow: 0 8px 28px rgba(37, 99, 235, 0.48);
-  }
+        .nb-logo:hover .nb-logo-icon {
+            transform: scale(1.07) rotate(-4deg);
+            box-shadow: 0 8px 28px rgba(37, 99, 235, 0.48);
+        }
 
-  .nb-logo-svg {
-    position: relative;
-    z-index: 1;
-  }
+        .nb-logo-svg {
+            position: relative;
+            z-index: 1;
+        }
 
-  .nb-logo-text { display: flex; flex-direction: column; line-height: 1.15; }
+        .nb-logo-text { display: flex; flex-direction: column; line-height: 1.15; }
 
-  .nb-logo-name {
-    font-family: var(--nb-font);
-    font-size: 18px;
-    font-weight: 800;
-    color: var(--nb-slate-900);
-    letter-spacing: -0.03em;
-    white-space: nowrap;
-  }
+        .nb-logo-name {
+            font-family: var(--nb-font);
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--nb-blue-600);
+            letter-spacing: -0.03em;
+            white-space: nowrap;
+        }
 
-  .nb-logo-tag {
-    font-family: var(--nb-font);
-    font-size: 10px;
-    font-weight: 600;
-    color: var(--nb-blue-600);
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-    white-space: nowrap;
-  }
+        .nb-logo-tag {
+            font-family: var(--nb-font);
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--nb-blue-600);
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
 
+        @media (max-width: 640px) {
+            .nb-logo-icon { width: 36px; height: 36px; border-radius: 10px; }
+            .nb-logo-name { font-size: 16px; }
+            .nb-logo-tag { font-size: 9px; }
+        }
 
+        @media (max-width: 480px) {
+            .nb-logo-icon { width: 32px; height: 32px; border-radius: 8px; }
+            .nb-logo-name { font-size: 14px; }
+            .nb-logo-tag { font-size: 8px; }
+        }
 
-  @media (max-width: 640px) {
- 
-    .nb-logo-icon { width: 36px; height: 36px; border-radius: 10px; }
-    .nb-logo-name { font-size: 16px; }
-    .nb-logo-tag { font-size: 9px; }}
+        /* ── Dark mode overrides for logo & scrollbar ── */
+        html.dark .nb-logo-tag { color: #60a5fa; }
+
+        html.dark ::-webkit-scrollbar-track { background: #1e293b; }
+        html.dark ::-webkit-scrollbar-thumb { background: #0288d1; }
     </style>
 </head>
 
-<body class="antialiased bg-gradient-to-br from-[#EFF6FF] via-[#DBEAFE] to-[#BAE6FD] min-h-screen relative overflow-x-hidden">
-
-    <!-- Dynamic watercolor background overlay + modern wave effect -->
-    <div class="fixed inset-0 z-0 pointer-events-none">
-        <!-- abstract aqua waves -->
-        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 1440 320\'%3E%3Cpath fill=\'%2300acc1\' fill-opacity=\'0.08\' d=\'M0,192L48,186.7C96,181,192,171,288,176C384,181,480,203,576,208C672,213,768,203,864,186.7C960,171,1056,149,1152,149.3C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z\'%3E%3C/path%3E%3C/svg%3E')] bg-no-repeat bg-bottom bg-contain opacity-40"></div>
-        <div class="absolute top-0 -left-20 w-[600px] h-[600px] bg-[#2cc1e0] rounded-full blur-[130px] opacity-20"></div>
-        <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#0288d1] rounded-full blur-[120px] opacity-15"></div>
-        <div class="absolute top-1/3 left-1/2 w-[400px] h-[400px] bg-[#00b4d8] rounded-full blur-[100px] opacity-10"></div>
-    </div>
+<body class="antialiased bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen relative overflow-x-hidden">
 
     <!-- ========== HEADER / LOGO - AquaBlast brand ========== -->
-    <div class="fixed top-6 left-6 z-50 flex items-center gap-4">
+    <div class="fixed top-4 left-4 sm:top-6 sm:left-6 z-50 flex items-center gap-4">
         <!-- LOGO -->
-        <a href="index.html" class="nb-logo">
+        <a href="index.html" class="nb-logo" aria-label="ProWash Home">
           <div class="nb-logo-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/>
               <path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/>
             </svg>
@@ -207,125 +223,122 @@
         </a>
     </div>
 
-    <!-- top-right tools: RTL + light/dark (but we keep full aqua style always fresh)-->
-    <div class="fixed top-6 right-6 z-50 flex items-center gap-3">
-        <button id="rtlToggle" class="w-10 h-10 rounded-full bg-white/70 backdrop-blur-sm border border-[#00acc1]/40 flex items-center justify-center text-[#0288d1] hover:bg-[#0288d1] hover:text-white transition-all shadow-md hover:shadow-lg" title="Toggle RTL">
+    <!-- top-right tools: RTL + light/dark -->
+    <div class="fixed top-4 right-4 sm:top-6 sm:right-6 z-50 flex items-center gap-3">
+        <button id="rtlToggle" type="button" aria-label="Toggle RTL direction" class="w-10 h-10 rounded-full bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm border border-[#00acc1]/40 dark:border-slate-600 flex items-center justify-center text-[#0288d1] dark:text-[#38bdf8] hover:bg-[#0288d1] dark:hover:bg-[#0288d1] hover:text-white transition-all shadow-md hover:shadow-lg">
             <span class="text-[11px] font-bold tracking-wide">RTL</span>
         </button>
-        <button id="themeToggle" class="w-10 h-10 rounded-full bg-white/70 backdrop-blur-sm border border-[#00acc1]/40 flex items-center justify-center text-[#0288d1] hover:bg-[#0288d1] hover:text-white transition-all shadow-md" title="Aqua theme mode">
-            <i id="themeIcon" class="fas fa-water text-sm"></i>
+        <button id="themeToggle" type="button" aria-label="Toggle theme" class="w-10 h-10 rounded-full bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm border border-[#00acc1]/40 dark:border-slate-600 flex items-center justify-center text-[#0288d1] dark:text-[#38bdf8] hover:bg-[#0288d1] dark:hover:bg-[#0288d1] hover:text-white transition-all shadow-md">
+            <i id="themeIcon" class="fas fa-water text-sm" aria-hidden="true"></i>
         </button>
     </div>
 
     <!-- MAIN LOGIN CARD -->
-    <div class="relative z-10 min-h-screen w-full flex items-center justify-center px-4 py-24 md:py-12">
+    <div class="relative z-10 min-h-screen w-full flex items-center justify-center px-4 py-24 md:py-12 ">
         <div class="w-full max-w-md transform transition-all duration-500">
-            <!-- Glassmorphic floating card with deep aqua accents -->
-            <div class="backdrop-blur-xl bg-white/85 dark:bg-slate-900/80 rounded-3xl shadow-2xl border border-white/40 dark:border-slate-700/50 overflow-hidden p-6 sm:p-8 transition-all duration-300 hover:shadow-[0_20px_40px_-12px_rgba(2,136,209,0.25)]">
+            <!-- Clean white/dark card with perfect shadow -->
+            <div class="bg-white dark:bg-slate-800 rounded-3xl shadow-xl border border-gray-100 dark:border-slate-700/50 overflow-hidden p-6 sm:p-8 md:p-10 transition-all duration-300">
                 
                 <!-- Brand header with wave icon -->
-                <div class="text-center mb-5 border-b border-[#00acc1]/20 pb-5">
-                    <div class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-[#00acc1] to-[#0288d1] text-white shadow-md mb-3">
-                        <i class="fas fa-water fa-lg drop-shadow-sm"></i>
-                    </div>
+                <div class="text-center mb-6 border-b border-gray-100 dark:border-slate-700 pb-6">
+                    
                     <h1 class="text-3xl font-extrabold tracking-tight bg-gradient-to-r from-[#0288d1] to-[#00acc1] bg-clip-text text-transparent">Login to AquaBlast</h1>
-                    <p class="text-[0.75rem] font-medium text-slate-600 dark:text-slate-400 mt-1 flex items-center justify-center gap-1">
-                        <i class="fas fa-droplet text-[#00acc1] text-[9px]"></i> dive into your dashboard
+                    <p class="text-[0.75rem] font-medium text-slate-500 dark:text-slate-400 mt-1.5 flex items-center justify-center gap-1">
+                        <i class="fas fa-droplet text-[#00acc1] text-[9px]" aria-hidden="true"></i> dive into your dashboard
                     </p>
                 </div>
 
                 <!-- Login Form -->
-                <form id="loginForm" class="space-y-5">
-                    <!-- Email field with fresh aqua style -->
+                <form id="loginForm" class="space-y-5" novalidate>
+                    <!-- Email field -->
                     <div>
                         <label for="email" class="block text-[11px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300 mb-1.5 flex items-center gap-1.5">
-                            <i class="fas fa-envelope text-[#00acc1] text-[12px]"></i> Email Address
+                            <i class="fas fa-envelope text-[#00acc1] text-[12px]" aria-hidden="true"></i> Email Address
                         </label>
                         <div class="relative group">
-                            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none" aria-hidden="true">
                                 <i class="fas fa-user-circle text-[#0288d1]/60 text-base group-focus-within:text-[#0288d1] transition-colors"></i>
                             </div>
-                            <input type="email" id="email" required placeholder="hydro@aquablast.com" 
-                                class="w-full pl-11 pr-4 py-3.5 bg-white/90 dark:bg-slate-800/80 border border-[#7ad0e6]/60 rounded-xl focus:border-[#0288d1] focus:ring-2 focus:ring-[#0288d1]/30 outline-none transition-all text-slate-800 dark:text-white placeholder:text-slate-400 text-[15px] shadow-sm">
+                            <input type="email" id="email" required placeholder="hydro@aquablast.com" aria-required="true" autocomplete="email"
+                                class="w-full pl-11 pr-4 py-3.5 bg-gray-50 dark:bg-slate-900/60 border border-gray-200 dark:border-slate-600 rounded-xl focus:border-[#0288d1] focus:ring-2 focus:ring-[#0288d1]/30 outline-none transition-all text-slate-800 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 text-[15px] shadow-sm">
                         </div>
                     </div>
 
                     <!-- Password field with eye toggle -->
                     <div>
-                        <div class="flex items-center justify-between mb-1.5">
+                        <div class="flex items-center mb-1.5">
                             <label for="password" class="text-[11px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300 flex items-center gap-1.5">
-                                <i class="fas fa-key text-[#00acc1] text-[11px]"></i> Password
+                                <i class="fas fa-key text-[#00acc1] text-[11px]" aria-hidden="true"></i> Password
                             </label>
-                            <a href="#" class="text-[10px] font-semibold text-[#0288d1] hover:text-[#00acc1] transition-colors">forgot flow?</a>
                         </div>
                         <div class="relative">
-                            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none" aria-hidden="true">
                                 <i class="fas fa-lock text-[#0288d1]/60 text-sm"></i>
                             </div>
-                            <input type="password" id="password" required placeholder="••••••••" 
-                                class="w-full pl-11 pr-12 py-3.5 bg-white/90 dark:bg-slate-800/80 border border-[#7ad0e6]/60 rounded-xl focus:border-[#0288d1] focus:ring-2 focus:ring-[#0288d1]/30 outline-none transition-all text-slate-800 dark:text-white text-[15px] shadow-sm">
-                            <button type="button" onclick="togglePassword()" class="absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-[#0288d1] transition-colors">
-                                <i id="eyeIcon" class="fas fa-eye text-sm"></i>
+                            <input type="password" id="password" required placeholder="••••••••" aria-required="true" autocomplete="current-password"
+                                class="w-full pl-11 pr-12 py-3.5 bg-gray-50 dark:bg-slate-900/60 border border-gray-200 dark:border-slate-600 rounded-xl focus:border-[#0288d1] focus:ring-2 focus:ring-[#0288d1]/30 outline-none transition-all text-slate-800 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 text-[15px] shadow-sm">
+                            <button type="button" onclick="togglePassword()" aria-label="Toggle password visibility" class="absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-[#0288d1] transition-colors">
+                                <i id="eyeIcon" class="fas fa-eye text-sm" aria-hidden="true"></i>
                             </button>
                         </div>
                     </div>
 
-                    <!-- Remember & terms row -->
+                    <!-- Remember & Reset row -->
                     <div class="flex items-center justify-between pt-1">
                         <label class="flex items-center gap-2 cursor-pointer group">
-                            <input type="checkbox" id="rememberCheck" class="w-4 h-4 rounded border-[#00acc1] text-[#0288d1] focus:ring-[#0288d1] focus:ring-offset-0 accent-[#0288d1] bg-white/70 dark:bg-slate-700">
-                            <span class="text-xs font-medium text-slate-700 dark:text-slate-300 group-hover:text-[#0288d1] transition-colors">Stay logged in</span>
+                            <input type="checkbox" id="rememberCheck" class="w-4 h-4 rounded border-gray-300 dark:border-slate-600 text-[#0288d1] focus:ring-[#0288d1] focus:ring-offset-0 accent-[#0288d1] bg-white dark:bg-slate-700">
+                            <span class="text-xs font-medium text-slate-600 dark:text-slate-300 group-hover:text-[#0288d1] dark:group-hover:text-[#38bdf8] transition-colors">Stay logged in</span>
                         </label>
-                        <a href="#" class="text-[10px] font-bold uppercase tracking-wide text-[#0288d1] hover:underline underline-offset-2">Reset Password?</a>
+                        <a href="#" id="resetPasswordLink" class="text-[10px] font-bold uppercase tracking-wide text-[#0288d1] dark:text-[#38bdf8] hover:text-[#00acc1] transition-colors">Reset Password?</a>
                     </div>
 
-                    <!-- Submit Button - AQUA BLAST GLOW -->
-                    <button type="submit" id="loginSubmitBtn" class="aqua-glow-btn w-full mt-3 py-3.5 bg-gradient-to-r from-[#0288d1] to-[#00acc1] text-white rounded-xl font-bold text-sm uppercase tracking-wider shadow-lg hover:shadow-[#0288d1]/40 transition-all flex items-center justify-center gap-2 group">
-                        <span>Log In</span>
-                        <i class="fas fa-arrow-right text-xs rtl-flip-icon group-hover:translate-x-1 transition-transform"></i>
+                    <!-- Submit Button -->
+                    <button type="submit" id="loginSubmitBtn" aria-label="Log in to your account" class="aqua-glow-btn w-full mt-3 py-3.5 bg-gradient-to-r from-[#0288d1] to-[#00acc1] text-white rounded-xl font-bold text-sm uppercase tracking-wider shadow-lg hover:shadow-[#0288d1]/40 transition-all flex items-center justify-center gap-2 group">
+                        <span>sign-in </span>
+                        <i class="fas fa-arrow-right text-xs rtl-flip-icon group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
                     </button>
                 </form>
 
                 <!-- Divider with aqua droplets -->
                 <div class="relative my-6">
                     <div class="absolute inset-0 flex items-center">
-                        <div class="w-full border-t border-[#00acc1]/20"></div>
+                        <div class="w-full border-t border-gray-100 dark:border-slate-700"></div>
                     </div>
                     <div class="relative flex justify-center text-xs">
-                        <span class="px-3 bg-white/90 dark:bg-slate-900/80 text-[#0288d1] font-bold uppercase tracking-wider text-[10px] flex items-center gap-1">
-                            <i class="fas fa-water"></i> aqua connect <i class="fas fa-water"></i>
+                        <span class="px-3 bg-white dark:bg-slate-800 text-[#0288d1] dark:text-[#38bdf8] font-bold uppercase tracking-wider text-[10px] flex items-center gap-1">
+                            <i class="fas fa-water" aria-hidden="true"></i> aqua connect <i class="fas fa-water" aria-hidden="true"></i>
                         </span>
                     </div>
                 </div>
 
-                <!-- social buttons styled with aqua border -->
+                <!-- social buttons -->
                 <div class="grid grid-cols-2 gap-3">
-                    <button class="flex items-center justify-center gap-2 py-2.5 px-3 bg-white/90 dark:bg-slate-800/70 border border-[#00acc1]/30 rounded-xl hover:border-[#0288d1] hover:bg-white/100 transition-all text-xs font-semibold text-slate-700 dark:text-white group">
-                        <i class="fab fa-google text-[#ea4335] text-sm"></i> Google
+                    <button id="googleLoginBtn" type="button" aria-label="Sign in with Google" class="flex items-center justify-center gap-2 py-2.5 px-3 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-600 rounded-xl hover:bg-blue-50 dark:hover:bg-slate-700 hover:border-[#0288d1] dark:hover:border-[#38bdf8] transition-all text-xs font-semibold text-slate-700 dark:text-slate-200">
+                        <i class="fab fa-google text-[#ea4335] text-sm" aria-hidden="true"></i> Google
                     </button>
-                    <button class="flex items-center justify-center gap-2 py-2.5 px-3 bg-white/90 dark:bg-slate-800/70 border border-[#00acc1]/30 rounded-xl hover:border-[#0288d1] hover:bg-white/100 transition-all text-xs font-semibold text-slate-700 dark:text-white">
-                        <i class="fab fa-apple text-slate-800 dark:text-white text-sm"></i> Apple
+                    <button id="appleLoginBtn" type="button" aria-label="Sign in with Apple" class="flex items-center justify-center gap-2 py-2.5 px-3 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-600 rounded-xl hover:bg-blue-50 dark:hover:bg-slate-700 hover:border-[#0288d1] dark:hover:border-[#38bdf8] transition-all text-xs font-semibold text-slate-700 dark:text-slate-200">
+                        <i class="fab fa-apple text-slate-800 dark:text-white text-sm" aria-hidden="true"></i> Apple
                     </button>
                 </div>
 
                 <!-- Sign up link -->
-                <p class="mt-6 text-center text-[12px] text-slate-600 dark:text-slate-400">
+                <p class="mt-6 text-center text-[12px] text-slate-500 dark:text-slate-400">
                     New to AquaBlast? 
-                    <a href="#" id="signupTrigger" class="font-extrabold text-[#0288d1] hover:text-[#00acc1] border-b border-[#0288d1]/40 hover:border-[#00acc1] transition-all pb-0.5">Create account</a>
+                    <a href="#" id="signupTrigger" class="font-extrabold text-[#0288d1] dark:text-[#38bdf8] hover:text-[#00acc1] border-b border-[#0288d1]/40 hover:border-[#00acc1] transition-all pb-0.5">Create account</a>
                 </p>
                 
                 <!-- extra micro info -->
-                <div class="mt-5 text-center text-[9px] text-slate-400 flex items-center justify-center gap-2">
-                    <i class="fas fa-shield-alt text-[#00acc1]"></i> secure login • 256-bit encryption 
-                    <i class="fas fa-droplet text-[#00acc1] ml-1"></i>
+                <div class="mt-5 text-center text-[9px] text-slate-400 dark:text-slate-500 flex items-center justify-center gap-2">
+                    <i class="fas fa-shield-alt text-[#00acc1]" aria-hidden="true"></i> secure login &bull; 256-bit encryption 
+                    <i class="fas fa-droplet text-[#00acc1] ml-1" aria-hidden="true"></i>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- success modal toast (optional, but adds nice feedback) -->
-    <div id="toastMessage" class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-slate-900/90 backdrop-blur-lg text-white px-5 py-2.5 rounded-full shadow-xl flex items-center gap-2 text-sm font-medium z-50 transition-all duration-300 opacity-0 pointer-events-none">
-        <i class="fas fa-circle-check text-[#00acc1]"></i>
+    <!-- success modal toast -->
+    <div id="toastMessage" role="status" aria-live="polite" class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-slate-900/90 backdrop-blur-lg text-white px-5 py-2.5 rounded-full shadow-xl flex items-center gap-2 text-sm font-medium z-50 transition-all duration-300 opacity-0 pointer-events-none">
+        <i class="fas fa-circle-check text-[#00acc1]" aria-hidden="true"></i>
         <span id="toastText">Login successful! Redirecting...</span>
     </div>
 
@@ -349,12 +362,20 @@
         }
 
         // -------------------------------
-        // 2. DARK MODE (but keep aqua theme and also adapt background)
+        // 2. DARK MODE (Optimized with solid/radial dynamic toggle)
         // -------------------------------
         const htmlEl = document.documentElement;
         const themeBtn = document.getElementById('themeToggle');
         const themeIcon = document.getElementById('themeIcon');
         
+        function updateBodyBackground(isDark) {
+            if (isDark) {
+                document.body.style.background = 'radial-gradient(circle at 10% 20%, #0f172a, #020617)';
+            } else {
+                document.body.style.background = '';
+            }
+        }
+
         function applyThemePreference() {
             const storedTheme = localStorage.getItem('aquablast-theme');
             const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -363,9 +384,11 @@
             if (isDark) {
                 htmlEl.classList.add('dark');
                 if(themeIcon) themeIcon.className = 'fas fa-moon text-sm';
+                updateBodyBackground(true);
             } else {
                 htmlEl.classList.remove('dark');
                 if(themeIcon) themeIcon.className = 'fas fa-sun text-sm';
+                updateBodyBackground(false);
             }
         }
         
@@ -374,32 +397,22 @@
                 htmlEl.classList.remove('dark');
                 localStorage.setItem('aquablast-theme', 'light');
                 if(themeIcon) themeIcon.className = 'fas fa-sun text-sm';
+                updateBodyBackground(false);
             } else {
                 htmlEl.classList.add('dark');
                 localStorage.setItem('aquablast-theme', 'dark');
                 if(themeIcon) themeIcon.className = 'fas fa-moon text-sm';
+                updateBodyBackground(true);
             }
-            // adjust background intensity for dark mode via body class
-            document.body.classList.toggle('dark-mode-bg');
         }
         
         if (themeBtn) themeBtn.addEventListener('click', toggleThemeMode);
         applyThemePreference();
         
-        // additional dynamic background tweak (just to keep aqua spirit)
-        if (htmlEl.classList.contains('dark')) {
-            document.body.style.background = 'radial-gradient(circle at 10% 20%, #0f172a, #020617)';
-        } else {
-            document.body.style.background = '';
-        }
-        
-        // observe for style perfection
+        // MutationObserver to perfectly handle programmatic class updates
         const observer = new MutationObserver(() => {
-            if (htmlEl.classList.contains('dark')) {
-                document.body.style.background = 'radial-gradient(circle at 10% 20%, #0f172a, #020617)';
-            } else {
-                document.body.style.background = '';
-            }
+            const isDark = htmlEl.classList.contains('dark');
+            updateBodyBackground(isDark);
         });
         observer.observe(htmlEl, { attributes: true, attributeFilter: ['class'] });
         
@@ -428,8 +441,6 @@
             const stored = localStorage.getItem('aquablast-rtl');
             if (stored === 'true') {
                 htmlEl.setAttribute('dir', 'rtl');
-            } else if (stored === 'false') {
-                htmlEl.setAttribute('dir', 'ltr');
             } else {
                 htmlEl.setAttribute('dir', 'ltr');
             }
@@ -438,8 +449,7 @@
         applyStoredRTL();
         
         // -------------------------------
-        // 4. FORM SUBMIT: full responsive login simulation + redirect to "user dashboard" 
-        //    with full aqua flavor + success animation
+        // 4. FORM SUBMIT: Login simulation + redirect
         // -------------------------------
         const loginForm = document.getElementById('loginForm');
         const submitBtn = document.getElementById('loginSubmitBtn');
@@ -463,7 +473,6 @@
             }, 2200);
         }
         
-        // simple validation (mock demo)
         loginForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const emailInput = document.getElementById('email');
@@ -494,30 +503,17 @@
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> logging into AquaBlast...';
             submitBtn.classList.add('opacity-80', 'cursor-wait');
             
-            // mock async request
             setTimeout(() => {
-                // success - redirect to user dashboard (user.html) but first show toast
                 showToast('✅ Welcome back! Redirecting to dashboard...', false);
-                // store a flag for logged in simulation
                 localStorage.setItem('aquablast_logged_in', 'true');
                 localStorage.setItem('aquablast_user_email', email);
-                // redirect after smooth delay
                 setTimeout(() => {
-                    // create a demo user dashboard page (simulate internal navigation)
-                    // for production, you can redirect to user.html as the spec, but to create full response
-                    // we will redirect to "user.html" like original requested but since we need robust, 
-                    // also if user.html not exists, we create dynamic fallback? But according requirement: "next adhal eruka log nemas AquaBlast name logs erukanum okva"
-                    // Means we simulate redirection to user.html page — but full responsive page within same context? We'll do redirect.
-                    // however to make experience seamless and respect original demand (edha logi yalam apdiya erukanum coler blu coler), we redirect
                     window.location.href = 'user.html'; 
-                    // but if user.html is missing we also can create dynamic fallback, but since this is login, 
-                    // just in case we provide alternative after 1.2 secs, but ideally it's part of project.
-                    // For demo: if redirection fails due to missing file, we console; but typical environment test works.
                 }, 800);
             }, 1300);
         });
         
-        // "Signup here" click - if signup page redirection (signup.html) but to keep demo: we show alert with signup style
+        // "Signup here" click
         const signupTrigger = document.getElementById('signupTrigger');
         if (signupTrigger) {
             signupTrigger.addEventListener('click', (e) => {
@@ -529,18 +525,16 @@
             });
         }
         
-        // optional "forgot password" dummy friendly interaction
-        const forgotLinks = document.querySelectorAll('a[href="#"]');
-        forgotLinks.forEach(link => {
-            if (link.innerText.toLowerCase().includes('forgot') || link.innerText.toLowerCase().includes('reset')) {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    showToast('📧 AquaBlast recovery: check your email (demo flow)', false);
-                });
-            }
-        });
+        // "Reset Password?" link handler
+        const resetPwdLink = document.getElementById('resetPasswordLink');
+        if (resetPwdLink) {
+            resetPwdLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                showToast('📧 AquaBlast recovery: check your email (demo flow)', false);
+            });
+        }
         
-        // extra: if the user clicks on social buttons (Google/Apple) also show fresh toast info
+        // Social buttons click handler
         const socialBtns = document.querySelectorAll('.grid.grid-cols-2 button');
         socialBtns.forEach(btn => {
             btn.addEventListener('click', (e) => {
@@ -549,7 +543,7 @@
             });
         });
         
-        // set remember me functionality mock (stores in localStorage just for ui)
+        // Remember me functionality
         const rememberMe = document.getElementById('rememberCheck');
         if (rememberMe && localStorage.getItem('aquablast_remember_email')) {
             const savedEmail = localStorage.getItem('aquablast_remember_email');
@@ -565,7 +559,6 @@
             }
         });
         
-        // minor: preload any leftover theme handling for RTL icons consistency
         console.log("AquaBlast Login — fully responsive, aqua color scheme, blue wave ready");
     </script>
 </body>

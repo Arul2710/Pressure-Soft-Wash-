@@ -49,9 +49,9 @@
     <!-- Background Image with Overlay -->
     <div class="absolute inset-0 z-0">
         <!-- Change the src to your preferred pressure washing image -->
-        <img src="img/home1.webp" 
+        <img src="img/about1.webp" 
              class="w-full h-full object-cover opacity-40">
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#f0f9ff]/40 dark:via-black/40 to-[#f0f9ff] dark:to-black transition-colors duration-300"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#f0f9ff]/10 dark:via-black/40 to-[#f0f9ff] dark:to-black transition-colors duration-300"></div>
     </div>
 
     <!-- Floating Icons (Water & Sparkle theme) -->
@@ -75,7 +75,7 @@
         
         <!-- Buttons -->
         <div class="flex flex-wrap gap-5 justify-center">
-            <a href="#quote" class="px-10 py-4 bg-blue-600 text-white rounded-full font-bold tracking-widest uppercase hover:bg-blue-700 transition-all shadow-xl shadow-blue-100">Get Free Quote</a>
+            <a href="#quote" class="px-10 py-4 bg-blue-600 text-white rounded-full font-bold tracking-widest uppercase hover:bg-blue-700 transition-all shadow-xl ">Get Free Quote</a>
             <a href="service.html" class="px-10 py-4 border-2 border-blue-600 text-blue-600 dark:text-gray-300 rounded-full font-bold tracking-widest uppercase hover:bg-blue-600 hover:text-white transition-all bg-white/40 dark:bg-gray-800/40 backdrop-blur-md">Our Services</a>
         </div>
     </div>
@@ -92,75 +92,99 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Service 1: House Washing -->
-            <div class="group bg-white dark:bg-gray-800 rounded-[2rem] p-8 shadow-sm border border-gray-100 dark:border-gray-700 transition-all hover:shadow-2xl hover:-translate-y-2">
-                <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors duration-500">
-                    <i class="fas fa-home text-2xl text-blue-600 group-hover:text-white"></i>
+            <div class="group bg-white dark:bg-gray-800 rounded-[2rem] overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700/60 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+                <div class="w-full h-56 bg-blue-100 dark:bg-slate-700 overflow-hidden relative">
+                    <img src="img/home1-2.webp" alt="House Washing Service" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">House Washing</h3>
-                <p class="text-gray-600 dark:text-gray-400 text-sm mb-6 leading-relaxed">Safe and effective low-pressure cleaning to remove mold and algae from your siding.</p>
-                <a href="#" class="inline-flex items-center text-blue-600 font-bold text-sm uppercase tracking-wider hover:gap-2 transition-all">
-                    Learn More <i class="fas fa-arrow-right ml-2"></i>
-                </a>
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">House Washing</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-6 leading-relaxed">Safe and effective low-pressure cleaning to remove mold and algae from your siding.</p>
+                    <a href="house-washing.html" class="inline-flex items-center text-blue-600 dark:text-blue-400 font-bold text-sm uppercase tracking-wider group-hover:text-blue-500 transition-all">
+                        <span>Learn More</span>
+                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
             </div>
 
             <!-- Service 2: Roof Cleaning -->
-            <div class="group bg-white dark:bg-gray-800 rounded-[2rem] p-8 shadow-sm border border-gray-100 dark:border-gray-700 transition-all hover:shadow-2xl hover:-translate-y-2">
-                <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors duration-500">
-                    <i class="fas fa-house-damage text-2xl text-blue-600 group-hover:text-white"></i>
+            <div class="group bg-white dark:bg-gray-800 rounded-[2rem] overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700/60 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+                <div class="w-full h-56 bg-blue-100 dark:bg-slate-700 overflow-hidden relative">
+                    <img src="img/home1-3.webp" alt="Roof Cleaning Service" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='https://images.unsplash.com/photo-1632849400144-67452999740f?auto=format&fit=crop&w=600&q=80'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Roof Cleaning</h3>
-                <p class="text-gray-600 dark:text-gray-400 text-sm mb-6 leading-relaxed">Specialized soft wash treatment to extend the life of your roof and improve curb appeal.</p>
-                <a href="#" class="inline-flex items-center text-blue-600 font-bold text-sm uppercase tracking-wider hover:gap-2 transition-all">
-                    Learn More <i class="fas fa-arrow-right ml-2"></i>
-                </a>
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Roof Cleaning</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-6 leading-relaxed">Specialized soft wash treatment to extend the life of your roof and improve curb appeal.</p>
+                    <a href="roof-cleaning.html" class="inline-flex items-center text-blue-600 dark:text-blue-400 font-bold text-sm uppercase tracking-wider group-hover:text-blue-500 transition-all">
+                        <span>Learn More</span>
+                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
             </div>
 
             <!-- Service 3: Driveway Cleaning -->
-            <div class="group bg-white dark:bg-gray-800 rounded-[2rem] p-8 shadow-sm border border-gray-100 dark:border-gray-700 transition-all hover:shadow-2xl hover:-translate-y-2">
-                <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors duration-500">
-                    <i class="fas fa-road text-2xl text-blue-600 group-hover:text-white"></i>
+            <div class="group bg-white dark:bg-gray-800 rounded-[2rem] overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700/60 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+                <div class="w-full h-56 bg-blue-100 dark:bg-slate-700 overflow-hidden relative">
+                    <img src="img/home1-4.webp" alt="Driveway Cleaning Service" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=600&q=80'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Driveway Cleaning</h3>
-                <p class="text-gray-600 dark:text-gray-400 text-sm mb-6 leading-relaxed">High-pressure blasting to remove oil stains, tire marks, and deeply embedded dirt.</p>
-                <a href="#" class="inline-flex items-center text-blue-600 font-bold text-sm uppercase tracking-wider hover:gap-2 transition-all">
-                    Learn More <i class="fas fa-arrow-right ml-2"></i>
-                </a>
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Driveway Cleaning</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-6 leading-relaxed">High-pressure blasting to remove oil stains, tire marks, and deeply embedded dirt.</p>
+                    <a href="driveway-cleaning.html" class="inline-flex items-center text-blue-600 dark:text-blue-400 font-bold text-sm uppercase tracking-wider group-hover:text-blue-500 transition-all">
+                        <span>Learn More</span>
+                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
             </div>
 
             <!-- Service 4: Soft Washing -->
-            <div class="group bg-white dark:bg-gray-800 rounded-[2rem] p-8 shadow-sm border border-gray-100 dark:border-gray-700 transition-all hover:shadow-2xl hover:-translate-y-2">
-                <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors duration-500">
-                    <i class="fas fa-tint text-2xl text-blue-600 group-hover:text-white"></i>
+            <div class="group bg-white dark:bg-gray-800 rounded-[2rem] overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700/60 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+                <div class="w-full h-56 bg-blue-100 dark:bg-slate-700 overflow-hidden relative">
+                    <img src="img/home1-5.webp" alt="Soft Washing Service" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='https://images.unsplash.com/photo-1527689368864-3a821dbccc34?auto=format&fit=crop&w=600&q=80'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Soft Washing</h3>
-                <p class="text-gray-600 dark:text-gray-400 text-sm mb-6 leading-relaxed">Gentle cleaning for delicate surfaces that can't handle high pressure.</p>
-                <a href="#" class="inline-flex items-center text-blue-600 font-bold text-sm uppercase tracking-wider hover:gap-2 transition-all">
-                    Learn More <i class="fas fa-arrow-right ml-2"></i>
-                </a>
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Soft Washing</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-6 leading-relaxed">Gentle cleaning for delicate surfaces that can't handle high pressure.</p>
+                    <a href="soft-washing.html" class="inline-flex items-center text-blue-600 dark:text-blue-400 font-bold text-sm uppercase tracking-wider group-hover:text-blue-500 transition-all">
+                        <span>Learn More</span>
+                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
             </div>
 
             <!-- Service 5: Deck Cleaning -->
-            <div class="group bg-white dark:bg-gray-800 rounded-[2rem] p-8 shadow-sm border border-gray-100 dark:border-gray-700 transition-all hover:shadow-2xl hover:-translate-y-2">
-                <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors duration-500">
-                    <i class="fas fa-layer-group text-2xl text-blue-600 group-hover:text-white"></i>
+            <div class="group bg-white dark:bg-gray-800 rounded-[2rem] overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700/60 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+                <div class="w-full h-56 bg-blue-100 dark:bg-slate-700 overflow-hidden relative">
+                    <img src="img/home1-6.webp" alt="Deck Cleaning Service" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='https://images.unsplash.com/photo-1595855759920-86582396756a?auto=format&fit=crop&w=600&q=80'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Deck Cleaning</h3>
-                <p class="text-gray-600 dark:text-gray-400 text-sm mb-6 leading-relaxed">Revitalize your wood or composite decks, making them look brand new again.</p>
-                <a href="#" class="inline-flex items-center text-blue-600 font-bold text-sm uppercase tracking-wider hover:gap-2 transition-all">
-                    Learn More <i class="fas fa-arrow-right ml-2"></i>
-                </a>
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Deck Cleaning</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-6 leading-relaxed">Revitalize your wood or composite decks, making them look brand new again.</p>
+                    <a href="deck-cleaning.html" class="inline-flex items-center text-blue-600 dark:text-blue-400 font-bold text-sm uppercase tracking-wider group-hover:text-blue-500 transition-all">
+                        <span>Learn More</span>
+                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
             </div>
 
             <!-- Service 6: Commercial Cleaning -->
-            <div class="group bg-white dark:bg-gray-800 rounded-[2rem] p-8 shadow-sm border border-gray-100 dark:border-gray-700 transition-all hover:shadow-2xl hover:-translate-y-2">
-                <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors duration-500">
-                    <i class="fas fa-building text-2xl text-blue-600 group-hover:text-white"></i>
+            <div class="group bg-white dark:bg-gray-800 rounded-[2rem] overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700/60 transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+                <div class="w-full h-56 bg-blue-100 dark:bg-slate-700 overflow-hidden relative">
+                    <img src="img/home1-7.webp" alt="Commercial Cleaning Service" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Commercial Cleaning</h3>
-                <p class="text-gray-600 dark:text-gray-400 text-sm mb-6 leading-relaxed">Scalable pressure washing solutions for storefronts, parking lots, and offices.</p>
-                <a href="#" class="inline-flex items-center text-blue-600 font-bold text-sm uppercase tracking-wider hover:gap-2 transition-all">
-                    Learn More <i class="fas fa-arrow-right ml-2"></i>
-                </a>
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-3">Commercial Cleaning</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm mb-6 leading-relaxed">Scalable pressure washing solutions for storefronts, parking lots, and offices.</p>
+                    <a href="commercial-cleaning.html" class="inline-flex items-center text-blue-600 dark:text-blue-400 font-bold text-sm uppercase tracking-wider group-hover:text-blue-500 transition-all">
+                        <span>Learn More</span>
+                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </div>

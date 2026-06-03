@@ -171,7 +171,7 @@
             font-family: var(--nb-font);
             font-size: 18px;
             font-weight: 800;
-            color: var(--nb-slate-900);
+            color: var(--nb-blue-600);
             letter-spacing: -0.03em;
             white-space: nowrap;
         }
@@ -277,11 +277,22 @@
                             <i data-lucide="menu" class="w-5 h-5 sm:w-6 sm:h-6"></i>
                         </button>
                         <div>
-                            <h1 id="pageTitle" class="text-xl sm:text-2xl font-black tracking-tight uppercase">WASH DASHBOARD</h1>
-                            <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-medium mt-0.5">
-                                <span class="text-primary font-black">💧 Pressure Washing & Soft Washing</span> · Commercial & Residential
-                            </p>
-                        </div>
+    <h1 id="pageTitle" class="text-xl sm:text-2xl font-black tracking-tight uppercase text-gray-900 dark:text-white flex items-center gap-2">
+        <span>WASH DASHBOARD</span>
+        <span class="inline-block w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+    </h1>
+    
+    <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-medium mt-0.5">
+        <span class="text-blue-600 dark:text-blue-400 font-black">💧 Pressure Washing & Soft Washing</span> · Commercial & Residential
+    </p>
+
+    <!-- ── Personalization & Welcoming Link Addition ── -->
+    <div class="mt-3 p-3 bg-blue-50/50 dark:bg-slate-800/40 rounded-xl border border-blue-100/40 dark:border-slate-700/30 max-w-xl">
+        <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 font-medium leading-relaxed">
+            Welcome back to your workspace! Ready to clean up? Let's manage your active locations, check real-time pipeline schedules, and launch a fresh streak of property restoration requests today. ✨
+        </p>
+    </div>
+</div>
                     </div>
                 </div>
                 <div class="top-actions">
@@ -299,15 +310,18 @@
                     <button onclick="toggleDarkMode()" class="p-2.5 bg-white dark:bg-[#111827] rounded-xl custom-shadow border border-blue-200 dark:border-gray-700 hover:scale-110 transition-all text-primary">
                         <i id="themeIcon" data-lucide="moon" class="w-5 h-5"></i>
                     </button>
-                    <div class="hidden sm:flex items-center gap-2 bg-white dark:bg-[#111827] pl-2 pr-3 py-1.5 rounded-xl custom-shadow border border-blue-200">
-                        <div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary">
-                            <i class="fas fa-pressure-washer text-sm"></i>
-                        </div>
-                        <div class="leading-tight">
-                            <p class="font-bold text-xs">Mike Sullivan</p>
-                            <p class="text-[8px] text-primary font-black">Lead Wash Tech</p>
-                        </div>
-                    </div>
+                    <div class="hidden sm:flex items-center gap-2.5 bg-white dark:bg-[#111827] pl-2 pr-3 py-1.5 rounded-xl custom-shadow border border-blue-100 dark:border-slate-800 transition-colors duration-300">
+    <!-- User Profile Image Wrapper -->
+    <div class="w-8 h-8 rounded-full border border-blue-200 dark:border-slate-700 overflow-hidden relative flex-shrink-0">
+        <img src="img/mike-sullivan.jpg" alt="Mike Sullivan Profile" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80'">
+    </div>
+    
+    <!-- User Meta Details -->
+    <div class="leading-tight">
+        <p class="font-bold text-xs text-gray-900 dark:text-white">Mike Sullivan</p>
+        <p class="text-[9px] text-blue-600 dark:text-blue-400 font-extrabold uppercase tracking-wider mt-0.5">Lead Wash Tech</p>
+    </div>
+</div>
                     <div class="sm:hidden">
                         <div class="w-9 h-9 rounded-full bg-primary/20 flex items-center justify-center text-primary">
                             <i class="fas fa-water text-sm"></i>

@@ -130,42 +130,82 @@
 </section>
 
 <!-- Section 3 — Commercial Services -->
-<section class="py-24 px-6 bg-slate-900 text-white overflow-hidden relative">
+<section class="py-24 px-6 bg-slate-900 text-white overflow-hidden relative transition-colors duration-300">
     <!-- Background Decor -->
-    <div class="absolute top-0 right-0 w-96 h-96 bg-blue-600 opacity-10 blur-[120px] rounded-full"></div>
+    <div class="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 opacity-40 blur-[120px] rounded-full pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-cyan-600/10 opacity-20 blur-[120px] rounded-full pointer-events-none"></div>
 
     <div class="max-w-7xl mx-auto relative z-10">
+        <!-- Main Layout Section Title Header -->
         <div class="text-center lg:text-left mb-16">
-            <span class="text-blue-400 font-bold uppercase tracking-widest text-xs">For Your Business</span>
-            <h2 class="font-cormorant text-5xl font-bold mt-2">Commercial Cleaning</h2>
-            <p class="text-gray-400 mt-4 max-w-xl">We handle large-scale projects with industrial-grade equipment and professional precision.</p>
+            <span class="text-blue-400 font-bold uppercase tracking-widest text-xs">For Your Business & Corporate Properties</span>
+            <h2 class="font-cormorant text-4xl md:text-5xl font-bold mt-2">Commercial Cleaning Solutions</h2>
+            <p class="text-slate-400 mt-4 max-w-xl text-sm md:text-base">We handle large-scale residential complexes and corporate projects with industrial-grade equipment and professional precision.</p>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
-            <!-- Office Washing -->
-            <div class="border-l-2 border-blue-600/30 pl-8 py-4 hover:border-blue-500 transition-all group">
-                <h4 class="text-blue-400 font-bold mb-2">01</h4>
-                <h3 class="text-2xl font-bold mb-4 group-hover:text-blue-400 transition-colors">Office Washing</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Full exterior building wash including windows, entryways, and signage to keep your brand looking sharp.</p>
+        <!-- 3-Column Premium Image Grid Container -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Service 1: Office Washing -->
+            <div class="group bg-slate-800/40 rounded-[2rem] overflow-hidden border border-slate-800 transition-all duration-300 hover:shadow-2xl hover:border-slate-700/80 hover:-translate-y-2">
+                <div class="w-full h-52 bg-slate-700 overflow-hidden relative">
+                    <!-- Business/Corporate Washing Visual Concept Representation -->
+                    <img src="img/office-washing.jpg" alt="Commercial Office Building Washing" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80'">
+                    <div class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-md">Business</div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+                </div>
+                <div class="p-8">
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="text-blue-400 font-bold text-lg">01</span>
+                        <div class="h-px bg-blue-500/30 w-8"></div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 group-hover:text-blue-400 transition-colors">Office Washing</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Full exterior building wash including storefront windows, high-profile entryways, and pristine corporate signage layout frameworks.</p>
+                </div>
             </div>
 
-            <!-- Parking Area Cleaning -->
-            <div class="border-l-2 border-blue-600/30 pl-8 py-4 hover:border-blue-500 transition-all group">
-                <h4 class="text-blue-400 font-bold mb-2">02</h4>
-                <h3 class="text-2xl font-bold mb-4 group-hover:text-blue-400 transition-colors">Parking Area Cleaning</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Removing oil spills, tire marks, and heavy grime from parking lots and garages using high-pressure steam.</p>
+            <!-- Service 2: Parking Area Cleaning -->
+            <div class="group bg-slate-800/40 rounded-[2rem] overflow-hidden border border-slate-800 transition-all duration-300 hover:shadow-2xl hover:border-slate-700/80 hover:-translate-y-2">
+                <div class="w-full h-52 bg-slate-700 overflow-hidden relative">
+                    <!-- Heavy Industrial Fleet/Parking Lot Cleaning Visual Concept Representation -->
+                    <img src="img/parking-cleaning.jpg" alt="Parking Area High Pressure Power Cleaning" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=600&q=80'">
+                    <div class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-md">Business</div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+                </div>
+                <div class="p-8">
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="text-blue-400 font-bold text-lg">02</span>
+                        <div class="h-px bg-blue-500/30 w-8"></div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 group-hover:text-blue-400 transition-colors">Parking Area Cleaning</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Removing tough industrial oil spills, heavy rubber tire marks, and embedded dirt layers from parking lots and commercial garages.</p>
+                </div>
             </div>
 
-            <!-- Building Cleaning -->
-            <div class="border-l-2 border-blue-600/30 pl-8 py-4 hover:border-blue-500 transition-all group">
-                <h4 class="text-blue-400 font-bold mb-2">03</h4>
-                <h3 class="text-2xl font-bold mb-4 group-hover:text-blue-400 transition-colors">Building Cleaning</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Multi-story building maintenance and warehouse exterior restoration for long-term durability.</p>
+            <!-- Service 3: Multi-Family Home Buildings -->
+            <div class="group bg-slate-800/40 rounded-[2rem] overflow-hidden border border-slate-800 transition-all duration-300 hover:shadow-2xl hover:border-slate-700/80 hover:-translate-y-2">
+                <div class="w-full h-52 bg-slate-700 overflow-hidden relative">
+                    <!-- Complex Large Residential Blocks/Home Services Visual Concept Representation -->
+                    <img src="img/building-cleaning.jpg" alt="Large Apartment Complex Structural Soft Washing" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" onerror="this.src='https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=600&q=80'">
+                    <div class="absolute top-4 left-4 bg-cyan-500 text-slate-900 text-xs font-extrabold uppercase tracking-widest px-3 py-1 rounded-full shadow-md">Home Blocks</div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+                </div>
+                <div class="p-8">
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="text-blue-400 font-bold text-lg">03</span>
+                        <div class="h-px bg-blue-500/30 w-8"></div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 group-hover:text-blue-400 transition-colors">Building Cleaning</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Multi-story residential apartment blocks, townhome communities, and complex warehouse structural exterior restorations.</p>
+                </div>
             </div>
         </div>
 
+        <!-- Action Corporate Quote Interactive Button -->
         <div class="mt-16 text-center lg:text-left">
-            <a href="contact.html" class="px-10 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-bold uppercase tracking-widest text-xs transition-all">Get Corporate Quote</a>
+            <a href="contact.html" class="inline-flex items-center justify-center gap-2 px-10 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold uppercase tracking-widest text-xs transition-all shadow-lg hover:shadow-blue-600/30 hover:-translate-y-0.5 duration-200">
+                <span>Get Corporate Quote</span>
+                <i class="fas fa-file-invoice text-[10px]"></i>
+            </a>
         </div>
     </div>
 </section>
